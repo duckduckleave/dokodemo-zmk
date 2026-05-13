@@ -1,0 +1,8 @@
+config SHIELD_DOKODEMOV0_LEFT
+    def_bool $(shields_list_contains,dokodemov0_left)
+  
+config SHIELD_DOKODEMOV0_RIGHT
+    def_bool $(shields_list_contains,dokodemov0_right)
+  
+config SHIELD_DOKODEMOV0_DONGLE
+    def_bool $(shields_list_contains,dokodemov0_dongle)
