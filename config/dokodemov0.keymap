@@ -18,7 +18,7 @@
 #define HYP(key) LG(LS(LC(LA(key))))
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-// TODO Having some issues triggering thumb layers atm
+// TODO: Having some issues triggering thumb layers atm
 &lt { quick-tap-ms = <175>; };
 
 / {
@@ -163,14 +163,14 @@
             require-prior-idle-ms = <50>;  
         };
 
-        combo_bottom_left {
-            timeout-ms = <90>;
-            key-positions = <20 21>;
-            bindings = <&kp Q>;
-            require-prior-idle-ms = <50>;  
-        };
-
         // TODO: Review if needed!
+        /* combo_bottom_left { */
+        /*     timeout-ms = <90>; */
+        /*     key-positions = <20 21>; */
+        /*     bindings = <&kp Q>; */
+        /*     require-prior-idle-ms = <50>;   */
+        /* }; */
+        /**/
         /* combo_top_left_2 { */
         /*     timeout-ms = <40>; */
         /*     key-positions = <1 2>; */
