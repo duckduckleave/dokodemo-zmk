@@ -74,7 +74,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
 &kp MEH(LBKT) &kp MEH(LEFT) &kp MEH(DOWN) &kp MEH(RIGHT) &kp MEH(RBKT)        &kp PLUS &kp N4    &kp N5      &kp N6     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────
-&kp MEH(MINUS) &kp MEH(SLASH) &kp MEH(EQUAL) &kp MEH(BACKSLASH) &kp MEH(LBKT) &kp COMMA &kp N1 &kp N2   &kp N3     &kp PERIOD
+&kp MEH(MINUS) &kp MEH(SLASH) &kp MEH(EQUAL) &kp MEH(BACKSLASH) &kp MEH(LBKT) &kp PERIOD &kp N1 &kp N2   &kp N3     &kp COMMA
         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
                                             &kp LCMD    &lt HYP_L DEL          &trans        &trans
         //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
