@@ -19,38 +19,39 @@
 #
 ---
 include:
-
   - board: seeeduino_xiao_ble
     shield: dokodemov0_left
-
-## To build with ZMK Studio support, uncomment the following block
-## by removing the leading '#' from each line.
-
-#  - board: seeeduino_xiao_ble
-#    shield: dokodemov0_left
-#    snippet: studio-rpc-usb-uart
-#    cmake-args: -DCONFIG_ZMK_STUDIO=y
-#    artifact-name: dokodemov0_left_with_studio
-
-## See ZMK documentation on how to build and flash the firmware for dongle mode.
-## The "board" for the dongle can be anything ZMK supports.
-
-#  - board: seeeduino_xiao_ble
-#    shield: dokodemov0_dongle
-
-#  - board: seeeduino_xiao_ble
-#    shield: dokodemov0_left
-#    snippet: dokodemov0-left-as-peripheral
-#    artifact-name: dokodemov0_left_as_peripheral
-
-#  - board: seeeduino_xiao_ble
-#    shield: dokodemov0_dongle
-#    snippet: studio-rpc-usb-uart
-#    cmake-args: -DCONFIG_ZMK_STUDIO=y
-#    artifact-name: dokodemov0_dongle_with_studio
 
   - board: seeeduino_xiao_ble
     shield: dokodemov0_right
 
   - board: seeeduino_xiao_ble
     shield: settings_reset
+
+  ## To build with ZMK Studio support, uncomment the following block
+  ## by removing the leading '#' from each line.
+
+  #  - board: seeeduino_xiao_ble
+  #    shield: dokodemov0_left
+  #    snippet: studio-rpc-usb-uart
+  #    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #    artifact-name: dokodemov0_left_with_studio
+
+  ## See ZMK documentation on how to build and flash the firmware for dongle mode.
+  ## The "board" for the dongle can be anything ZMK supports.
+
+  - board: nice_nano
+    shield: dokodemov0_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: dokodemov0_dongle_with_studio
+
+  - board: seeeduino_xiao_ble
+    shield: dokodemov0_left
+    snippet: dokodemov0-left-as-peripheral
+    artifact-name: dokodemov0_left_as_peripheral
+
+  - board: seeeduino_xiao_ble
+    shield: dokodemov0_right
+    snippet: dokodemov0-right-as-peripheral
+    artifact-name: dokodemov0_right_as_peripheral
