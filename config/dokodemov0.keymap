@@ -39,18 +39,12 @@
             >;
         };
 
-        // Direct LSHFT access
-        CAD {
+        cad_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp Q      &kp C      &kp O      &kp P      &kp W          &kp J      &kp M      &kp D      &odkexc    &kp Y
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &lt FN_L A &hml LALT S &hml LCTRL E &hml LGUI N &kp F    &kp L      &hmr RGUI R &hmr RCTRL T &hmr LALT I &kp U
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp Z      &kp X      &dashion   &kp V      &kp B          &pecol     &kp H      &kp G      &comacol   &kp K
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                         &kp LSHFT  &lt NAV_L BSPC    &lt NUM_L SPACE  &lt SYM_L TAB
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
+                                             &kp LSHFT  &trans         &trans     &trans
             >;
         };
 
