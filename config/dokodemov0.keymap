@@ -14,6 +14,7 @@
 #define SYM_L 4
 #define FN_L 5
 #define HYP_L 6
+#define CAD_L 7
 #define MEH(key) LS(LC(LA(key)))
 #define HYP(key) LG(LS(LC(LA(key))))
 
@@ -109,6 +110,7 @@
             >;
         };
 
+        // Hyprland shortcuts... Unused atm LOL
         hyp_layer {
             // Double thumbs layer
             bindings = <
@@ -124,14 +126,21 @@
             >;
         };
 
-        // Did not work with non-&trans keys
-        // conditional_layers {
-        //     compatible = "zmk,conditional-layers";
-        //     thumbs_layer {
-        //         if-layers = <NUM_L SYM_L>;
-        //         then-layer = <HYP_L>;
-        //     };
-        // };
+        // Direct LSHFT access
+        CAD {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+            &kp Q      &kp C      &kp O      &kp P      &kp W          &kp J      &kp M      &kp D      &odkexc    &kp Y
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+            &lt FN_L A &hml LALT S &hml LCTRL E &hml LGUI N &kp F    &kp L      &hmr RGUI R &hmr RCTRL T &hmr LALT I &kp U
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+            &kp Z      &kp X      &dashion   &kp V      &kp B          &pecol     &kp H      &kp G      &comacol   &kp K
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                         &kp LSHFT  &lt NAV_L BSPC    &lt NUM_L SPACE  &lt SYM_L TAB
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
     };
     
     combos {
@@ -144,7 +153,7 @@
         combo_caps_word {
             timeout-ms = <40>;
             key-positions = <20 29>;
-            bindings = <&caps_word>;
+            bindings = <&tog CAD_L>;
             layers = <0>;
             require-prior-idle-ms = <200>;  
         };
