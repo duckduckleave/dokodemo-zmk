@@ -30,7 +30,7 @@
         odkexc: od_kc_excl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&sl 1>, <&kp EXCL>;
+            bindings = <&sl 2>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
