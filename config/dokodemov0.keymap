@@ -154,7 +154,6 @@
             timeout-ms = <40>;
             key-positions = <20 29>;
             bindings = <&tog CAD_L>;
-            layers = <0>;
             require-prior-idle-ms = <200>;  
         };
 
