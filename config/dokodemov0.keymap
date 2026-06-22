@@ -14,7 +14,7 @@
 #define NUM_L 4
 #define SYM_L 5
 #define FN_L 6
-#define HYP_L 6
+#define HYP_L 7
 
 #define MEH(key) LS(LC(LA(key)))
 #define HYP(key) LG(LS(LC(LA(key))))
