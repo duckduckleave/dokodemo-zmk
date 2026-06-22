@@ -66,11 +66,11 @@
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-          &kp LG(MEH(TAB)) &kp HOME &kp UP    &kp END    &kp PAGE_UP  &kp MEH(F1) &kp MEH(F2) &kp MEH(F3) &kp MEH(F4) &kp MEH(F5)
+          &kp LG(MEH(TAB)) &kp HOME &kp UP    &kp END    &kp PAGE_UP  &kp MEH(F1) &kp MEH(F7) &kp MEH(F8) &kp MEH(F9) &kp MEH(F5)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp MEH(TAB) &kp LEFT  &kp DOWN &kp RIGHT   &kp PAGE_DOWN  &kp MEH(F6) &hmr RGUI MEH(F7) &hmr RCTRL MEH(F8) &hmr LALT MEH(F9) &hmr RSHIFT MEH(F10)
+           &kp MEH(TAB) &kp LEFT  &kp DOWN &kp RIGHT   &kp PAGE_DOWN  &kp MEH(F6) &hmr RGUI MEH(F4) &hmr RCTRL MEH(F5) &hmr LALT MEH(F6) &hmr RSHIFT MEH(F10)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)   &kp MEH(N1)     &kp MEH(F11) &kp MEH(F12) &kp MEH(F13) &kp MEH(F16) &kp MEH(F17)
+           &kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)   &kp MEH(N1)     &kp MEH(F11) &kp MEH(F1) &kp MEH(F2) &kp MEH(F3) &kp MEH(F17)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
                                             &trans      &trans        &lt HYP_L MEH(SPACE)        &kp MEH(BACKSPACE)
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -120,16 +120,16 @@
             >;
         };
 
-        // Hyprland shortcuts... Unused atm LOL
+        // All mods -> secondary behaviours for the meh layers
         hyp_layer {
             // Double thumbs layer
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮           ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-&kp HYP(F20) &kp HYP(GRAVE) &kp HYP(UP) &kp HYP(MINUS) &kp HYP(SINGLE_QUOTE)  &kp HYP(F1) &kp HYP(F2) &kp HYP(F3) &kp HYP(F4) &kp HYP(F5)
+&kp HYP(F20) &kp HYP(GRAVE) &kp HYP(UP) &kp HYP(MINUS) &kp HYP(SINGLE_QUOTE)  &kp HYP(F1) &kp HYP(F7) &kp HYP(F8) &kp HYP(F9) &kp HYP(F5)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp HYP(LBKT) &kp HYP(LEFT) &kp HYP(DOWN) &kp HYP(RIGHT) &kp HYP(RBKT)       &kp HYP(F6) &kp HYP(F7) &kp HYP(F8) &kp HYP(F9) &kp HYP(F10)
+&kp HYP(LBKT) &kp HYP(LEFT) &kp HYP(DOWN) &kp HYP(RIGHT) &kp HYP(RBKT)       &kp HYP(F6) &kp HYP(F4) &kp HYP(F5) &kp HYP(F6) &kp HYP(F10)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp HYP(MINUS) &kp HYP(SLASH) &kp HYP(EQUAL) &kp HYP(BACKSLASH) &kp HYP(LBKT) &kp HYP(F11) &kp HYP(F12) &kp HYP(F13) &kp HYP(F16) &kp HYP(F17)
+&kp HYP(MINUS) &kp HYP(SLASH) &kp HYP(EQUAL) &kp HYP(BACKSLASH) &kp HYP(LBKT) &kp HYP(F11) &kp HYP(F1) &kp HYP(F2) &kp HYP(F3) &kp HYP(F17)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
                                             &trans      &trans          &trans        &trans
         //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
