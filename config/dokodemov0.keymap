@@ -78,7 +78,6 @@
         };
 
         math_layer {
-            // Also used for Aerospace
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮           ╭──────────┬──────────┬──────────┬──────────┬──────────╮
 &kp MEH(F20) &kp MEH(GRAVE) &kp MEH(UP) &kp MEH(MINUS) &kp MEH(SINGLE_QUOTE)  &kp KP_DIVIDE &kp N7 &kp N8 &kp N9    &kp SPACE
