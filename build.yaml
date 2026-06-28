@@ -20,10 +20,10 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: dokodemov0_left
+    shield: dokodemov0_left rgbled_adapter
 
   - board: seeeduino_xiao_ble
-    shield: dokodemov0_right
+    shield: dokodemov0_right rgbled_adapter
 
   - board: seeeduino_xiao_ble
     shield: settings_reset
@@ -35,7 +35,7 @@ include:
   ## by removing the leading '#' from each line.
 
   #  - board: seeeduino_xiao_ble
-  #    shield: dokodemov0_left
+  #    shield: dokodemov0_left rgbled_adapter
   #    snippet: studio-rpc-usb-uart
   #    cmake-args: -DCONFIG_ZMK_STUDIO=y
   #    artifact-name: dokodemov0_left_with_studio
@@ -50,6 +50,6 @@ include:
     artifact-name: dokodemov0_dongle_with_studio
 
   - board: seeeduino_xiao_ble
-    shield: dokodemov0_left
+    shield: dokodemov0_left rgbled_adapter
     snippet: dokodemov0-left-as-peripheral
     artifact-name: dokodemov0_left_as_peripheral
