@@ -1,4 +1,4 @@
-#include "dokodemov0-layouts.dtsi"
+#include "dokodemo-layouts.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
@@ -15,7 +15,6 @@
     };
 };
 
-&physical_layout_dokodemov0 {
+&physical_layout_dokodemo {
     transform = <&matrix_transform0>;
 };
-

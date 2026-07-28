@@ -1,4 +1,4 @@
-#include "dokodemov0.dtsi"
+#include "dokodemo.dtsi"
 
 / {
     kscan_dongle: kscan_dongle {
@@ -9,7 +9,6 @@
     };
 };
 
-&physical_layout_dokodemov0 {
+&physical_layout_dokodemo {
     kscan = <&kscan_dongle>;
 };
-

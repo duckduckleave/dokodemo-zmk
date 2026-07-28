@@ -1,6 +1,6 @@
 manifest:
   defaults:
-    revision: v0.3
+    revision: edf5c0814fd3ea202e43aad2d68fd32e882a518c
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -12,6 +12,6 @@ manifest:
       import: app/west.yml
     - name: zmk-rgbled-widget
       url: https://github.com/caksoylar/zmk-rgbled-widget
-      revision: v0.3
+      revision: 8756cb7b8114069fa3c25c6f6c990f24988fceff
   self:
     path: config

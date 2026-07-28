@@ -1,4 +1,4 @@
-#include "dokodemov0.dtsi"
+#include "dokodemo.dtsi"
 
 / {
     kscan0: kscan0 {
@@ -27,7 +27,6 @@
     col-offset = <5>;
 };
 
-&physical_layout_dokodemov0 {
+&physical_layout_dokodemo {
     kscan = <&kscan0>;
 };
-
