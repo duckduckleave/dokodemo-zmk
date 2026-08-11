@@ -13,6 +13,17 @@ draw_config:
   append_colon_to_layer_header: true
   style_layer_activators: true
   glyph_tap_size: 22
+  svg_extra_style: |
+    .layer-Base .key.odk rect.key {
+      fill: #f3e8ff;
+      stroke: #9333ea;
+      stroke-width: 2;
+    }
+    .layer-Base .key.odk text.tap,
+    .layer-Base text.shifted {
+      fill: #9333ea;
+      font-weight: bold;
+    }
   # Font Awesome Free bluetooth-b, CC BY 4.0: https://fontawesome.com/license/free
   glyphs:
     bluetooth: |
@@ -161,7 +172,7 @@ parse_config:
     LGUI: "◆"
     RGUI: "◆"
     LCMD: "◆"
-    SPACE: "␠"
+    SPACE: "⎵"
     TAB: "⇥"
     BACKSPACE: "⌫"
     BSPC: "⌫"

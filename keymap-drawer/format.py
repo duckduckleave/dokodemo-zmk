@@ -11,7 +11,7 @@ import yaml
 LEGEND_HEIGHT = 50
 LEGEND = """<g class="keymap-legend">
 <rect x="20" y="3" width="692" height="42" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
-<text x="30" y="17" style="font-size:11px;text-anchor:start">◆ GUI · ✣ Meh · ✦ Hyper</text>
+<text x="30" y="17" style="font-size:11px;text-anchor:start">◆ GUI · ✣ Meh · ✦ Hyper · <tspan style="fill:#9333ea;font-weight:bold">◌ ODK outputs</tspan></text>
 <text x="30" y="36" style="font-size:11px;text-anchor:start">◎ Focus · ≡ Group · ◇ Workspace · ▣ Monitor · ▱ Float · ⛶ Fullscreen</text>
 </g>"""
 
@@ -21,6 +21,29 @@ def format_yaml(path: Path) -> None:
 
     layers = keymap.get("layers", {})
     layers.pop("CAD", None)
+
+    base = layers.get("Base")
+    accents = layers.pop("Accents", None)
+    if base and accents:
+        for position, base_key in enumerate(base):
+            if not isinstance(base_key, dict):
+                base_key = {"t": base_key}
+                base[position] = base_key
+
+            # Preserve ordinary shifted output without styling it as ODK output.
+            if "s" in base_key:
+                base_key["right"] = base_key.pop("s")
+
+            accent_key = accents[position]
+            if isinstance(accent_key, dict):
+                if accent_key.get("type") == "trans":
+                    continue
+                accent_key = accent_key.get("t")
+            if accent_key:
+                base_key["s"] = accent_key
+
+        # Highlight the sticky one-dead-key activator itself.
+        base[8]["type"] = "odk"
 
     ordered_layers = {}
     for name in ("Base", "Symbols"):
@@ -32,11 +55,6 @@ def format_yaml(path: Path) -> None:
     keymap["combos"] = [
         combo for combo in keymap.get("combos", []) if "CAD" not in combo.get("l", [])
     ]
-
-    # The ODK activator is sticky, so its key is not physically held while typing.
-    accents = keymap["layers"].get("Accents")
-    if accents and isinstance(accents[8], dict) and accents[8].get("t") == "¨":
-        accents[8] = "¨"
 
     path.write_text(
         yaml.safe_dump(keymap, sort_keys=False, allow_unicode=True),

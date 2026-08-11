@@ -2,54 +2,73 @@ layout:
   zmk_keyboard: dokodemo
 layers:
   Base:
-  - Q
-  - C
-  - O
-  - P
-  - W
-  - J
-  - M
-  - D
+  - t: Q
+    s: â
+  - t: C
+    s: ç
+  - t: O
+    s: œ
+  - t: P
+    s: ô
+  - t: W
+  - t: J
+  - t: M
+  - t: D
+    s: _
   - t: ◌
     h: sticky
-    s: '!'
-  - Y
+    right: '!'
+    s: ¨
+    type: odk
+  - t: Y
+    s: û
   - t: A
     h: ƒ
+    s: à
   - t: S
     h: ⌥
+    s: é
   - t: E
     h: ⌃
+    s: è
   - t: N
     h: ◆
-  - F
-  - L
+    s: ê
+  - t: F
+  - t: L
+    s: (
   - t: R
     h: ◆
+    s: )
   - t: T
     h: ⌃
+    s: î
   - t: I
     h: ⌥
-  - U
-  - Z
-  - X
+    s: ï
+  - t: U
+    s: ù
+  - t: Z
+    s: æ
+  - t: X
   - t: '-'
-    s: '?'
-  - V
-  - B
+    right: '?'
+  - t: V
+  - t: B
   - t: .
-    s: ':'
-  - H
-  - G
+    right: ':'
+  - t: H
+  - t: G
   - t: ','
-    s: ;
-  - K
+    right: ;
+  - t: K
   - t: ⇧
     h: sticky
   - t: ⌫
     h: ⌖
-  - t: ␠
+  - t: ⎵
     h: ∑
+    s: ''''
   - t: ⇥
     h: '#'
   Symbols:
@@ -90,57 +109,6 @@ layers:
   - t: ▽
     type: trans
   - type: held
-  Accents:
-  - â
-  - ç
-  - œ
-  - ô
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - _
-  - ¨
-  - û
-  - à
-  - é
-  - è
-  - ê
-  - t: ▽
-    type: trans
-  - (
-  - )
-  - î
-  - ï
-  - ù
-  - æ
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - ''''
-  - t: ▽
-    type: trans
   Nav:
   - ✦⇥
   - ↖
@@ -179,7 +147,7 @@ layers:
   - t: ▽
     type: trans
   - type: held
-  - t: ✣␠
+  - t: ✣⎵
     h: ✦
   - ✣⌫
   Math:
@@ -192,7 +160,7 @@ layers:
   - '7'
   - '8'
   - '9'
-  - ␠
+  - ⎵
   - ▣→
   - ◎←
   - ◎↓
