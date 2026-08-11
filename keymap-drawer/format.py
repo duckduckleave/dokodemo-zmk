@@ -8,12 +8,21 @@ import sys
 import yaml
 
 
-LEGEND_HEIGHT = 50
+LEGEND_HEIGHT = 68
 LEGEND = """<g class="keymap-legend">
-<rect x="20" y="3" width="692" height="42" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
-<text x="30" y="17" style="font-size:11px;text-anchor:start">◆ GUI · ✣ Meh · ✦ Hyper · <tspan style="fill:#9333ea;font-weight:bold">◌ ODK outputs</tspan></text>
-<text x="30" y="36" style="font-size:11px;text-anchor:start">◎ Focus · ≡ Group · ◇ Workspace · ▣ Monitor · ▱ Float · ⛶ Fullscreen</text>
+<rect x="20" y="3" width="692" height="60" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
+<text x="30" y="15" style="font-size:11px;text-anchor:start">◆ GUI · ✣ Meh · ✦ Hyper · <tspan style="fill:#9333ea;font-weight:bold">◌ ODK outputs</tspan></text>
+<text x="30" y="34" style="font-size:11px;text-anchor:start"><tspan style="fill:#2563eb;font-weight:bold">⌖ Nav</tspan> · <tspan style="fill:#d97706;font-weight:bold"># Symbols</tspan> · <tspan style="fill:#0f766e;font-weight:bold">∑ Math</tspan> · <tspan style="fill:#15803d;font-weight:bold">ƒ Fn</tspan> · <tspan style="fill:#be123c;font-weight:bold">✦ Hyper</tspan></text>
+<text x="30" y="53" style="font-size:11px;text-anchor:start">◎ Focus · ≡ Group · ◇ Workspace · ▣ Monitor · ▱ Float · ⛶ Fullscreen</text>
 </g>"""
+
+TRIGGER_TYPES = {
+    "⌖": "trigger-nav",
+    "#": "trigger-symbols",
+    "∑": "trigger-math",
+    "ƒ": "trigger-fn",
+    "✦": "trigger-hyper",
+}
 
 
 def format_yaml(path: Path) -> None:
@@ -44,6 +53,14 @@ def format_yaml(path: Path) -> None:
 
         # Highlight the sticky one-dead-key activator itself.
         base[8]["type"] = "odk"
+
+    for layer in layers.values():
+        for key in layer:
+            if not isinstance(key, dict):
+                continue
+            trigger_type = TRIGGER_TYPES.get(key.get("h"))
+            if trigger_type and key.get("type") not in {"held", "trans"}:
+                key["type"] = trigger_type
 
     ordered_layers = {}
     for name in ("Base", "Symbols"):

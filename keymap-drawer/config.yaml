@@ -14,6 +14,47 @@ draw_config:
   style_layer_activators: true
   glyph_tap_size: 22
   svg_extra_style: |
+    .layer-Nav > text.label { fill: #2563eb; }
+    .layer-Nav rect.key { stroke: #93c5fd; }
+    .layer-Nav .held rect.key { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+
+    .layer-Symbols > text.label { fill: #d97706; }
+    .layer-Symbols rect.key { stroke: #fcd34d; }
+    .layer-Symbols .held rect.key { fill: #fef3c7; stroke: #d97706; stroke-width: 2; }
+
+    .layer-Math > text.label { fill: #0f766e; }
+    .layer-Math rect.key { stroke: #5eead4; }
+    .layer-Math .held rect.key { fill: #ccfbf1; stroke: #0f766e; stroke-width: 2; }
+
+    .layer-Fn > text.label { fill: #15803d; }
+    .layer-Fn rect.key { stroke: #86efac; }
+    .layer-Fn .held rect.key { fill: #dcfce7; stroke: #15803d; stroke-width: 2; }
+
+    .layer-Hyper > text.label { fill: #be123c; }
+    .layer-Hyper rect.key { stroke: #fda4af; }
+    .layer-Hyper .held rect.key { fill: #ffe4e6; stroke: #be123c; stroke-width: 2; }
+
+    .layer-Base .key.trigger-nav rect.key {
+      fill: #dbeafe; stroke: #2563eb; stroke-width: 2;
+    }
+    .layer-Base .key.trigger-symbols rect.key {
+      fill: #fef3c7; stroke: #d97706; stroke-width: 2;
+    }
+    .layer-Base .key.trigger-math rect.key {
+      fill: #ccfbf1; stroke: #0f766e; stroke-width: 2;
+    }
+    .layer-Base .key.trigger-fn rect.key {
+      fill: #dcfce7; stroke: #15803d; stroke-width: 2;
+    }
+    .key.trigger-hyper rect.key {
+      fill: #ffe4e6; stroke: #be123c; stroke-width: 2;
+    }
+    .layer-Base .key.trigger-nav text.hold { fill: #2563eb; font-weight: bold; }
+    .layer-Base .key.trigger-symbols text.hold { fill: #d97706; font-weight: bold; }
+    .layer-Base .key.trigger-math text.hold { fill: #0f766e; font-weight: bold; }
+    .layer-Base .key.trigger-fn text.hold { fill: #15803d; font-weight: bold; }
+    .key.trigger-hyper text.hold { fill: #be123c; font-weight: bold; }
+
     .layer-Base .key.odk rect.key {
       fill: #f3e8ff;
       stroke: #9333ea;

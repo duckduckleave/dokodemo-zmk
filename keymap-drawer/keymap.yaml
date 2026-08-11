@@ -25,6 +25,7 @@ layers:
   - t: A
     h: ƒ
     s: à
+    type: trigger-fn
   - t: S
     h: ⌥
     s: é
@@ -66,11 +67,14 @@ layers:
     h: sticky
   - t: ⌫
     h: ⌖
+    type: trigger-nav
   - t: ⎵
     h: ∑
     s: ''''
+    type: trigger-math
   - t: ⇥
     h: '#'
+    type: trigger-symbols
   Symbols:
   - ^
   - <
@@ -149,6 +153,7 @@ layers:
   - type: held
   - t: ✣⎵
     h: ✦
+    type: trigger-hyper
   - ✣⌫
   Math:
   - ✣F20
@@ -184,6 +189,7 @@ layers:
   - ◆
   - t: ⌦
     h: ✦
+    type: trigger-hyper
   - type: held
   - t: ▽
     type: trans
