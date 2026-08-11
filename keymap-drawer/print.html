@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DokoDemo keymap</title>
+    <style>
+      @page {
+        size: A4 portrait;
+        margin: 10mm;
+      }
+
+      * {
+        box-sizing: border-box;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: #24292e;
+        font-family: system-ui, sans-serif;
+      }
+
+      .sheet {
+        width: 190mm;
+        height: 277mm;
+        break-after: page;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sheet:last-child {
+        break-after: auto;
+      }
+
+      header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 2mm;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 16pt;
+      }
+
+      .page-number {
+        color: #667085;
+        font-size: 9pt;
+      }
+
+      .diagram {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .notes {
+        margin-top: 4mm;
+        padding: 3mm 4mm;
+        border: 0.3mm solid #d0d5dd;
+        border-radius: 2mm;
+        background: #f8fafc;
+        font-size: 9pt;
+        line-height: 1.4;
+      }
+
+      .notes strong {
+        color: #344054;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="sheet">
+      <header>
+        <h1>DokoDemo — Base &amp; Symbols</h1>
+        <span class="page-number">1 / 3</span>
+      </header>
+      <img class="diagram" src="print/page-1.svg" alt="Base and Symbols layers">
+      <div class="notes">
+        <strong>How to read:</strong> center = tap, bottom = hold, purple top = ODK output,
+        colored key = hold it for the matching layer. Combos: <strong>X + -</strong> = Escape;
+        <strong>G + ,</strong> = Enter.
+      </div>
+    </section>
+
+    <section class="sheet">
+      <header>
+        <h1>DokoDemo — Navigation &amp; Math</h1>
+        <span class="page-number">2 / 3</span>
+      </header>
+      <img class="diagram" src="print/page-2.svg" alt="Navigation and Math layers">
+      <div class="notes">
+        <strong>Hyprland actions:</strong> ◎ focus, ≡ window group, ◇ workspace,
+        ▣ monitor, ▱ floating window, and ⛶ fullscreen.
+      </div>
+    </section>
+
+    <section class="sheet">
+      <header>
+        <h1>DokoDemo — Function &amp; Hyper</h1>
+        <span class="page-number">3 / 3</span>
+      </header>
+      <img class="diagram" src="print/page-3.svg" alt="Function and Hyper layers">
+      <div class="notes">
+        <strong>Function:</strong> Bluetooth profiles, media controls, brightness, volume,
+        firmware actions, and F-keys. ✦ denotes the Hyper modifier/layer.
+      </div>
+    </section>
+  </body>
+</html>
