@@ -12,6 +12,13 @@ draw_config:
   arc_radius: 6
   append_colon_to_layer_header: true
   style_layer_activators: true
+  glyph_tap_size: 22
+  # Font Awesome Free bluetooth-b, CC BY 4.0: https://fontawesome.com/license/free
+  glyphs:
+    bluetooth: |
+      <svg viewBox="0 0 256 512">
+        <path d="M164.9 260L257.5 156.7 111.6 0 111.6 206.3 25.4 120.2-6 151.6 102.1 260-6 368.4 25.4 399.8 111.6 313.7 114.3 512 262.8 363.4 164.9 260zm40.9-103-50 50-.3-100.3 50.3 50.3zm-50 156 50 50-50.3 50.3.3-100.3z"/>
+      </svg>
 
 parse_config:
   raw_binding_map:
@@ -53,6 +60,10 @@ parse_config:
     "&kp MEH(F8)": "◇8"
     "&kp MEH(F9)": "◇9"
     "&kp MEH(F10)": "◇10"
+    "&bt BT_SEL 0": {t: "$$bluetooth$$", h: "0"}
+    "&bt BT_SEL 1": {t: "$$bluetooth$$", h: "1"}
+    "&bt BT_SEL 2": {t: "$$bluetooth$$", h: "2"}
+    "&bt BT_CLR_ALL": {t: "$$bluetooth$$", h: "Clear all"}
   layer_legend_map:
     Accents: "◌"
     Nav: "⌖"

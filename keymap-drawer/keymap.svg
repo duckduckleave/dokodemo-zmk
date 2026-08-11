@@ -1,4 +1,12 @@
-<svg width="732" height="2428" viewBox="0 0 732 2428" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="732" height="2478" viewBox="0 0 732 2478" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>/* start glyphs */
+<svg id="bluetooth">
+<svg viewBox="0 0 256 512">
+  <path d="M164.9 260L257.5 156.7 111.6 0 111.6 206.3 25.4 120.2-6 151.6 102.1 260-6 368.4 25.4 399.8 111.6 313.7 114.3 512 262.8 363.4 164.9 260zm40.9-103-50 50-.3-100.3 50.3 50.3zm-50 156 50 50-50.3 50.3.3-100.3z"/>
+</svg>
+
+</svg>
+</defs>/* end glyphs */
 <style>/* inherit to force styles through use tags */
 svg path {
     fill: inherit;
@@ -124,6 +132,12 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 </style>
+<g class="keymap-legend">
+<rect x="20" y="3" width="692" height="42" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
+<text x="30" y="17" style="font-size:11px;text-anchor:start">◆ GUI · ✣ Meh · ✦ Hyper</text>
+<text x="30" y="36" style="font-size:11px;text-anchor:start">◎ Focus · ≡ Group · ◇ Workspace · ▣ Monitor · ▱ Float · ⛶ Fullscreen</text>
+</g>
+<g transform="translate(0, 50)">
 <g transform="translate(30, 0)" class="layer-Base">
 <text x="0" y="28" class="label" id="Base">Base:</text>
 <g transform="translate(0, 56)">
@@ -897,24 +911,23 @@ path.combo {
 </g>
 <g transform="translate(84, 46)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">BT</text>
+<use href="#bluetooth" xlink:href="#bluetooth" x="-6" y="-11" height="22" width="11.0" class="key tap glyph bluetooth"/>
 <text x="0" y="24" class="key hold">0</text>
 </g>
 <g transform="translate(140, 28)" class="key keypos-2">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">BT</text>
+<use href="#bluetooth" xlink:href="#bluetooth" x="-6" y="-11" height="22" width="11.0" class="key tap glyph bluetooth"/>
 <text x="0" y="24" class="key hold">1</text>
 </g>
 <g transform="translate(196, 44)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">BT</text>
+<use href="#bluetooth" xlink:href="#bluetooth" x="-6" y="-11" height="22" width="11.0" class="key tap glyph bluetooth"/>
 <text x="0" y="24" class="key hold">2</text>
 </g>
 <g transform="translate(252, 52)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">BT</tspan><tspan x="0" dy="1.2em">CLR</tspan><tspan x="0" dy="1.2em">ALL</tspan>
-</text>
+<use href="#bluetooth" xlink:href="#bluetooth" x="-6" y="-11" height="22" width="11.0" class="key tap glyph bluetooth"/>
+<text x="0" y="24" class="key hold"><tspan style="font-size: 78%">Clear all</tspan></text>
 </g>
 <g transform="translate(420, 52)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1187,6 +1200,7 @@ path.combo {
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="546" y="136" width="28" height="26" class="combo"/>
 <text x="560" y="149" class="combo tap">⏎</text>
+</g>
 </g>
 </g>
 </g>

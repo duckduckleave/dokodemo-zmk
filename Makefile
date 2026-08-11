@@ -18,3 +18,4 @@ keymap-svg:
 	$(KEYMAP_DRAWER) -c $(KEYMAP_CONFIG) draw \
 		-j config/dokodemo.json -l dokodemo \
 		-o $(KEYMAP_SVG) $(KEYMAP_YAML)
+	python3 $(KEYMAP_FORMATTER) $(KEYMAP_SVG)

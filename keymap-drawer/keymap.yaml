@@ -221,13 +221,14 @@ layers:
     type: trans
   Fn:
   - ⏻
-  - t: BT
+  - t: $$bluetooth$$
     h: '0'
-  - t: BT
+  - t: $$bluetooth$$
     h: '1'
-  - t: BT
+  - t: $$bluetooth$$
     h: '2'
-  - BT CLR ALL
+  - t: $$bluetooth$$
+    h: Clear all
   - F10
   - F7
   - F8
