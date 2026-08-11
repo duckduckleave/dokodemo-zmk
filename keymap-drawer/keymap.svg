@@ -132,6 +132,8 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 
+.combopos-0 text.combo.tap { font-size: 22px; }
+
 .layer-Nav > text.label { fill: #2563eb; }
 .layer-Nav rect.key { stroke: #93c5fd; }
 .layer-Nav .held rect.key { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
