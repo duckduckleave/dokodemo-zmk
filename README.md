@@ -13,7 +13,13 @@ Highlights:
 - Caps Word, Escape, and Enter combos; and
 - a toggleable QWERTY gaming layer with dedicated left-thumb Space.
 
-## Current keymap
+## Compact keymap
+
+![Compact DokoDemo keymap](keymap-drawer/keymap-compact.png)
+
+[Download the SVG version](keymap-drawer/keymap-compact.svg).
+
+## Detailed keymap
 
 ![DokoDemo keymap](keymap-drawer/keymap.svg)
 
@@ -22,6 +28,19 @@ Regenerate the parsed keymap and SVG with:
 ```sh
 make keymap
 ```
+
+This also creates `keymap-drawer/keymap-compact.svg`: one physical keyboard
+with color-coded values from every user-facing layer. Run `make keymap-compact`
+when you only need to refresh the shareable composite SVG.
+
+Create the tracked 1600px PNG used above with:
+
+```sh
+make keymap-compact-png
+```
+
+This optional export target requires `rsvg-convert` from librsvg. Override its
+path with `RSVG_CONVERT=/path/to/rsvg-convert` when needed.
 
 This uses the globally installed `keymap` executable. Saving
 `keymap-drawer/keymap.yaml` in VS Code also redraws the SVG when the recommended
