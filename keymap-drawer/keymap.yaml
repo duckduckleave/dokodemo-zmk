@@ -186,6 +186,50 @@ layers:
     type: held
   - Reset
   - Studio 🔓
+  Gaming:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - t: J
+    h: ⌥
+  - t: K
+    h: ⌃
+  - t: L
+    h: ◆
+  - ;
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - t: ⇧
+    type: special
+  - t: ⎵
+    type: special
+  - t: ⌫
+    h: ⌖
+    type: special trigger-nav
+  - t: ⇥
+    h: '#'
+    type: special trigger-symbols
 combos:
 - p:
   - 20
@@ -207,3 +251,20 @@ combos:
   k: ⏎
   l:
   - Base
+- p:
+  - 28
+  - 29
+  k: $$gamepad$$
+  l:
+  - Base
+  type: trigger-gaming
+  w: 32.0
+  h: 30.0
+- p:
+  - 28
+  - 29
+  k: Base
+  l:
+  - Gaming
+  w: 44.0
+  h: 30.0

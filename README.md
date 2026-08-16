@@ -10,7 +10,8 @@ Highlights:
 - sticky Shift plus dual Backspace/Space NavNum thumb keys;
 - a shared navigation and numpad layer;
 - Selenium-style Symbols and Fn/Media layers; and
-- Caps Word, Escape, and Enter combos.
+- Caps Word, Escape, and Enter combos; and
+- a toggleable QWERTY gaming layer with dedicated left-thumb Space.
 
 ## Current keymap
 

@@ -4,7 +4,7 @@ KEYMAP_FORMATTER := keymap-drawer/format.py
 KEYMAP_SOURCE := config/dokodemo.keymap
 KEYMAP_YAML := keymap-drawer/keymap.yaml
 KEYMAP_SVG := keymap-drawer/keymap.svg
-KEYMAP_LAYERS := Base NumLock Symbols NavNum Fn
+KEYMAP_LAYERS := Base NumLock Symbols NavNum Fn Gaming
 KEYMAP_PRINT_DIR := keymap-drawer/print
 KEYMAP_PRINT_PDF := keymap-drawer/keymap-print.pdf
 CHROMIUM ?= chromium
@@ -36,7 +36,7 @@ keymap-print: check-keymap-print-deps keymap
 	$(KEYMAP_DRAWER) -c $(KEYMAP_CONFIG) draw -j config/dokodemo.json -l dokodemo \
 		-s NavNum -o $(KEYMAP_PRINT_DIR)/page-2.svg $(KEYMAP_YAML)
 	$(KEYMAP_DRAWER) -c $(KEYMAP_CONFIG) draw -j config/dokodemo.json -l dokodemo \
-		-s Fn -o $(KEYMAP_PRINT_DIR)/page-3.svg $(KEYMAP_YAML)
+		-s Fn Gaming -o $(KEYMAP_PRINT_DIR)/page-3.svg $(KEYMAP_YAML)
 	python3 $(KEYMAP_FORMATTER) $(KEYMAP_PRINT_DIR)/page-1.svg
 	python3 $(KEYMAP_FORMATTER) $(KEYMAP_PRINT_DIR)/page-2.svg
 	python3 $(KEYMAP_FORMATTER) $(KEYMAP_PRINT_DIR)/page-3.svg

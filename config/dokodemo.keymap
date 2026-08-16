@@ -11,6 +11,7 @@
 #define SYM_L 2
 #define NAV_NUM_L 3
 #define FN_L 4
+#define GAMING_L 5
 
 / {
     keymap {
@@ -70,6 +71,19 @@
                                              &trans     &bootloader        &sys_reset     &studio_unlock
             >;
         };
+
+        // QWERTY gaming layer: no hold-taps on the left hand, where movement
+        // keys and the dedicated Shift/Space thumbs need immediate presses.
+        // Right-hand home-row mods keep every modifier available.
+        gaming_layer {
+            display-name = "Gaming";
+            bindings = <
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &hmr LALT J &hmr RCTRL K &hmr RGUI L &kp SEMI
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+                                         &kp LSHFT  &kp SPACE            &lt NAV_NUM_L BSPC  &lt SYM_L TAB
+            >;
+        };
     };
 
     combos {
@@ -98,6 +112,22 @@
             key-positions = <27 28>;
             bindings = <&kp ENTER>;
             require-prior-idle-ms = <50>;
+        };
+
+        combo_gaming_on {
+            timeout-ms = <60>;
+            key-positions = <28 29>;
+            bindings = <&tog GAMING_L>;
+            layers = <BASE_L>;
+            require-prior-idle-ms = <100>;
+        };
+
+        combo_gaming_off {
+            timeout-ms = <60>;
+            key-positions = <28 29>;
+            bindings = <&tog GAMING_L>;
+            layers = <GAMING_L>;
+            require-prior-idle-ms = <100>;
         };
     };
 };

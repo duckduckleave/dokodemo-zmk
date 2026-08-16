@@ -12,7 +12,7 @@ LEGEND_HEIGHT = 49
 LEGEND = """<g class="keymap-legend">
 <rect x="20" y="3" width="692" height="41" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
 <text x="30" y="17" style="font-size:11px;text-anchor:start">⌃ Ctrl · ⌥ Alt · ◆ GUI · ⇧ Shift · bottom legend = hold</text>
-<text x="30" y="35" style="font-size:11px;text-anchor:start"><tspan style="fill:#2563eb;font-weight:bold">⌖ NavNum</tspan> · <tspan style="fill:#d97706;font-weight:bold"># Symbols</tspan> · <tspan style="fill:#15803d;font-weight:bold">fn Fn</tspan> · both inner thumbs = Fn</text>
+<text x="30" y="35" style="font-size:11px;text-anchor:start"><tspan style="fill:#2563eb;font-weight:bold">⌖ NavNum</tspan> · <tspan style="fill:#d97706;font-weight:bold"># Symbols</tspan> · <tspan style="fill:#15803d;font-weight:bold">fn Fn</tspan> · <tspan style="fill:#7c3aed;font-weight:bold">Gaming</tspan> · both inner thumbs = Fn</text>
 </g>"""
 
 TRIGGER_TYPES = {
@@ -69,7 +69,7 @@ def format_yaml(path: Path) -> None:
     layers.pop("NumLock", None)
 
     ordered_layers = {}
-    for name in ("Base", "Symbols", "NavNum", "Fn"):
+    for name in ("Base", "Symbols", "NavNum", "Fn", "Gaming"):
         if name in layers:
             ordered_layers[name] = layers[name]
     keymap["layers"] = ordered_layers
@@ -83,15 +83,15 @@ def format_yaml(path: Path) -> None:
 def format_svg(path: Path) -> None:
     svg = path.read_text(encoding="utf-8")
 
-    # keymap-drawer wraps custom SVGs in another <svg>; converting the
-    # Bluetooth definition to a symbol makes <use> render consistently in
-    # browsers, librsvg, and Chromium's PDF output.
-    svg = re.sub(
-        r'<svg id="bluetooth">\s*<svg viewBox="([^"]+)">(.*?)</svg>\s*</svg>',
-        r'<symbol id="bluetooth" viewBox="\1">\2</symbol>',
-        svg,
-        flags=re.DOTALL,
-    )
+    # keymap-drawer wraps custom SVGs in another <svg>; converting each custom
+    # definition to a symbol makes <use> render consistently everywhere.
+    for glyph in ("bluetooth", "gamepad"):
+        svg = re.sub(
+            rf'<svg id="{glyph}">\s*<svg viewBox="([^"]+)">(.*?)</svg>\s*</svg>',
+            rf'<symbol id="{glyph}" viewBox="\1">\2</symbol>',
+            svg,
+            flags=re.DOTALL,
+        )
 
     opening_end = svg.index(">") + 1
     opening = svg[:opening_end]

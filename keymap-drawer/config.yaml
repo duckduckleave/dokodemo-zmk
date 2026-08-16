@@ -32,6 +32,9 @@ draw_config:
     .layer-Fn rect.key { stroke: #86efac; }
     .layer-Fn .held rect.key { fill: #dcfce7; stroke: #15803d; stroke-width: 2; }
 
+    .layer-Gaming > text.label { fill: #7c3aed; }
+    .layer-Gaming rect.key { stroke: #c4b5fd; }
+
     .key.trigger-nav rect.key {
       fill: #dbeafe; stroke: #2563eb; stroke-width: 2;
     }
@@ -41,6 +44,10 @@ draw_config:
     .key.trigger-fn rect.key {
       fill: #dcfce7; stroke: #15803d; stroke-width: 2;
     }
+    .combo.trigger-gaming rect.combo {
+      fill: #ede9fe; stroke: #7c3aed; stroke-width: 2;
+    }
+    .combo.trigger-gaming use.gamepad { color: #7c3aed; }
     .key.trigger-nav text.hold {
       fill: #2563eb;
       font-size: 16.5px;
@@ -70,6 +77,10 @@ draw_config:
       <svg viewBox="0 0 256 512">
         <path d="M164.9 260L257.5 156.7 111.6 0 111.6 206.3 25.4 120.2-6 151.6 102.1 260-6 368.4 25.4 399.8 111.6 313.7 114.3 512 262.8 363.4 164.9 260zm40.9-103-50 50-.3-100.3 50.3 50.3zm-50 156 50 50-50.3 50.3.3-100.3z"/>
       </svg>
+    gamepad: |
+      <svg viewBox="0 0 24 24">
+        <path style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round" d="M8 8h8a5 5 0 0 1 4.7 3.3l1.1 3.1a3 3 0 0 1-5.2 2.8L15 15H9l-1.6 2.2a3 3 0 0 1-5.2-2.8l1.1-3.1A5 5 0 0 1 8 8Z M7 11v4 M5 13h4 M16.5 11.5h.01 M18.5 13.5h.01"/>
+      </svg>
 
 parse_config:
   raw_binding_map:
@@ -89,6 +100,7 @@ parse_config:
     NavNum: "⌖"
     Symbols: "#"
     Fn: "fn"
+    Gaming: "$$gamepad$$"
   modifier_fn_map:
     left_ctrl: "⌃"
     right_ctrl: "⌃"
@@ -210,4 +222,15 @@ parse_config:
     combo_enter:
       k: "⏎"
       l: [Base]
+    combo_gaming_on:
+      k: "$$gamepad$$"
+      l: [Base]
+      type: trigger-gaming
+      w: 32
+      h: 30
+    combo_gaming_off:
+      k: "Base"
+      l: [Gaming]
+      w: 44
+      h: 30
   zmk_preamble: "#define KEYMAP_DRAWER"
