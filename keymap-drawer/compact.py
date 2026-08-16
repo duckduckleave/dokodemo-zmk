@@ -139,7 +139,10 @@ def draw_key(position: dict, center: tuple[float, float, float], index: int, lay
         elif base_hold == "#":
             badge_class += " symbol-hold"
         out.append(f'<rect x="{-badge_width / 2:g}" y="6" width="{badge_width:g}" height="29" rx="14.5" class="{badge_class}"/>')
-        out.append(svg_text(0, 21, hold_label, "base-hold", size=fitted_size(hold_label, 15.5, badge_width - 10, 10.5)))
+        if base_hold == "⌖":
+            out.append('<use href="#navpad" x="-10" y="11" width="20" height="20" class="navnum"/>')
+        else:
+            out.append(svg_text(0, 21, hold_label, "base-hold", size=fitted_size(hold_label, 15.5, badge_width - 10, 10.5)))
 
     slots = {
         "tl": (-half + 9, -half + 17, "start"),
@@ -160,6 +163,10 @@ def draw_key(position: dict, center: tuple[float, float, float], index: int, lay
         # the actual Fn action, so the composite only shows the tap there.
         if layer_name == "Fn" or hold == "fn":
             rendered = tap
+        elif hold == "lock" and tap == "⌖":
+            out.append(f'<use href="#navpad" x="{x:g}" y="{y - 13:g}" width="16" height="16" class="navnum"/>')
+            out.append(svg_text(x + 19, y, "lock", "navnum", anchor="start", size=12))
+            continue
         elif hold == "lock":
             rendered = f"{tap} lock"
         else:
@@ -205,7 +212,9 @@ def mock_key(center_x: float, center_y: float) -> str:
 </g>
 <g class="activation-key">
 {svg_text(-8, 222, "hold # → Symbols", "symbols", anchor="end", size=13)}
-{svg_text(8, 222, "hold ⌖ → NavNum", "navnum", anchor="start", size=13)}
+{svg_text(8, 222, "hold", "navnum", anchor="start", size=13)}
+<use href="#navpad" x="42" y="214" width="16" height="16" class="navnum"/>
+{svg_text(62, 222, "→ NavNum", "navnum", anchor="start", size=13)}
 {svg_text(0, 246, "hold both inner thumbs → Fn", "fn-activation", size=14)}
 </g>
 </g>'''
@@ -306,6 +315,7 @@ def main() -> None:
 <defs>
   <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".28"/></filter>
   <symbol id="bluetooth" viewBox="0 0 256 512"><path fill="currentColor" d="M164.9 260L257.5 156.7 111.6 0 111.6 206.3 25.4 120.2-6 151.6 102.1 260-6 368.4 25.4 399.8 111.6 313.7 114.3 512 262.8 363.4 164.9 260zm40.9-103-50 50-.3-100.3 50.3 50.3zm-50 156 50 50-50.3 50.3.3-100.3z"/></symbol>
+  <symbol id="navpad" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.5 7.5 7h9L12 1.5ZM12 22.5 16.5 17h-9l4.5 5.5ZM1.5 12 7 16.5v-9L1.5 12ZM22.5 12 17 7.5v9l5.5-4.5Z"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></symbol>
   <symbol id="gamepad" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M8 8h8a5 5 0 0 1 4.7 3.3l1.1 3.1a3 3 0 0 1-5.2 2.8L15 15H9l-1.6 2.2a3 3 0 0 1-5.2-2.8l1.1-3.1A5 5 0 0 1 8 8Z M7 11v4 M5 13h4 M16.5 11.5h.01 M18.5 13.5h.01"/></symbol>
 </defs>
 <style>

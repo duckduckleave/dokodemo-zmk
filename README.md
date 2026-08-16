@@ -33,7 +33,7 @@ This also creates `keymap-drawer/keymap-compact.svg`: one physical keyboard
 with color-coded values from every user-facing layer. Run `make keymap-compact`
 when you only need to refresh the shareable composite SVG.
 
-Create the tracked 1600px PNG used above with:
+Create the tracked 3840px PNG used above with:
 
 ```sh
 make keymap-compact-png
