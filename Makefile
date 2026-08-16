@@ -4,7 +4,7 @@ KEYMAP_FORMATTER := keymap-drawer/format.py
 KEYMAP_SOURCE := config/dokodemo.keymap
 KEYMAP_YAML := keymap-drawer/keymap.yaml
 KEYMAP_SVG := keymap-drawer/keymap.svg
-KEYMAP_LAYERS := Base CAD Accents Nav Math Symbols Fn Hyper
+KEYMAP_LAYERS := Base NumLock Symbols NavNum Fn
 KEYMAP_PRINT_DIR := keymap-drawer/print
 KEYMAP_PRINT_PDF := keymap-drawer/keymap-print.pdf
 CHROMIUM ?= chromium
@@ -34,16 +34,16 @@ keymap-print: check-keymap-print-deps keymap
 	$(KEYMAP_DRAWER) -c $(KEYMAP_CONFIG) draw -j config/dokodemo.json -l dokodemo \
 		-s Base Symbols -o $(KEYMAP_PRINT_DIR)/page-1.svg $(KEYMAP_YAML)
 	$(KEYMAP_DRAWER) -c $(KEYMAP_CONFIG) draw -j config/dokodemo.json -l dokodemo \
-		-s Nav Math -o $(KEYMAP_PRINT_DIR)/page-2.svg $(KEYMAP_YAML)
+		-s NavNum -o $(KEYMAP_PRINT_DIR)/page-2.svg $(KEYMAP_YAML)
 	$(KEYMAP_DRAWER) -c $(KEYMAP_CONFIG) draw -j config/dokodemo.json -l dokodemo \
-		-s Fn Hyper -o $(KEYMAP_PRINT_DIR)/page-3.svg $(KEYMAP_YAML)
+		-s Fn -o $(KEYMAP_PRINT_DIR)/page-3.svg $(KEYMAP_YAML)
 	python3 $(KEYMAP_FORMATTER) $(KEYMAP_PRINT_DIR)/page-1.svg
 	python3 $(KEYMAP_FORMATTER) $(KEYMAP_PRINT_DIR)/page-2.svg
 	python3 $(KEYMAP_FORMATTER) $(KEYMAP_PRINT_DIR)/page-3.svg
 	$(CHROMIUM) --headless --no-sandbox --disable-gpu --disable-dev-shm-usage \
 		--disable-crash-reporter --disable-breakpad \
 		--allow-file-access-from-files --no-pdf-header-footer \
-		--user-data-dir=/tmp/dokodemo-keymap-print-chromium \
+		--user-data-dir=$$(mktemp -d /tmp/dokodemo-keymap-print-chromium.XXXXXX) \
 		--print-to-pdf=$(abspath $(KEYMAP_PRINT_PDF)) \
 		file://$(abspath keymap-drawer/print.html)
 	@echo "Created $(KEYMAP_PRINT_PDF)"

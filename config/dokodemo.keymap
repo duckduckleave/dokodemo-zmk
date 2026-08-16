@@ -2,141 +2,76 @@
 // SPDX-License-Identifier: MIT
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include "includes/behaviors.dtsi" // Home-row mods, ...
-#include "includes/macros.dtsi"    // Accent macros
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include "includes/behaviors.dtsi"
 
-#define DEF_L 0
-#define CAD_L 1
-#define ODK 2
-#define NAV_L 3
-#define NUM_L 4
-#define SYM_L 5
-#define FN_L 6
-#define HYP_L 7
-
-#define MEH(key) LS(LC(LA(key)))
-#define HYP(key) LG(LS(LC(LA(key))))
-
-// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-// TODO: Having some issues triggering thumb layers atm
-&lt { quick-tap-ms = <175>; };
+#define BASE_L 0
+#define NUM_LOCK_L 1
+#define SYM_L 2
+#define NAV_NUM_L 3
+#define FN_L 4
 
 / {
     keymap {
         compatible = "zmk,keymap";
-        default_layer {
+
+        base_layer {
+            display-name = "Base";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp Q      &kp C      &kp O      &kp P      &kp W          &kp J      &kp M      &kp D      &odkexc    &kp Y
+            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &lt FN_L A &hml LALT S &hml LCTRL E &hml LGUI N &kp F    &kp L      &hmr RGUI R &hmr RCTRL T &hmr LALT I &kp U
+            &kp A      &hml LGUI R &hml LCTRL S &hml LALT T &kp G     &kp M      &hmr LALT N &hmr RCTRL E &hmr RGUI I &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp Z      &kp X      &dashion   &kp V      &kp B          &pecol     &kp H      &kp G      &comacol   &kp K
+            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                         &sk LSHFT  &lt NAV_L BSPC    &lt NUM_L SPACE  &lt SYM_L TAB
+                                         &sk LSHFT  &lt NAV_NUM_L BSPC    &lt NAV_NUM_L SPACE  &lt SYM_L TAB
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        cad_layer {
+        num_lock_layer {
+            display-name = "NumLock";
             bindings = <
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-                                             &kp LSHFT  &trans         &trans     &trans
+            &kp ESC    &kp HOME   &kp UP     &kp END    &kp PG_UP      &to BASE_L  &kp N7     &kp N8     &kp N9     &kp FSLH
+            &kp EQUAL  &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN      &kp MINUS   &kp N4     &kp N5     &kp N6     &kp N0
+            &kp DLLR   &kp COLON  &kp STAR   &kp PLUS   &kp PRCNT      &kp COMMA   &kp N1     &kp N2     &kp N3     &kp DOT
+                                             &sk LSHFT  &lt NAV_NUM_L BSPC    &lt NAV_NUM_L SPACE  &lt SYM_L TAB
             >;
         };
 
-        odk {
+        symbols_layer {
+            display-name = "Symbols";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &a_circ   &kp RA(C)    &kp LA(Q)    &o_circ     &trans        &trans        &trans        &kp UNDER     &kp LA(U) &u_circ
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &a_grave  &e_acute     &e_grave     &e_circ     &trans        &kp LPAR      &kp RPAR      &i_circ       &i_trema      &u_grave 
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-              &kp LA(SQT)   &trans       &trans       &trans      &trans        &trans        &trans        &trans        &trans        &trans        
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &trans       &trans      &kp APOS        &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            &kp CARET  &kp LT     &kp GT     &kp DLLR   &kp PRCNT      &kp AT      &kp AMPS   &kp STAR   &kp SQT    &kp GRAVE
+            &kp LBRC   &kp LPAR   &kp RPAR   &kp RBRC   &kp EQUAL      &kp BSLH    &kp PLUS   &kp MINUS  &kp FSLH   &kp DQT
+            &kp TILDE  &kp LBKT   &kp RBKT   &kp UNDER  &kp HASH       &kp PIPE    &kp EXCL   &kp SEMI   &kp COLON  &kp QMARK
+                                             &trans     &trans             &trans       &trans
             >;
         };
 
-        nav_layer {
+        nav_num_layer {
+            display-name = "NavNum";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-          &kp LG(MEH(TAB)) &kp HOME &kp UP    &kp END    &kp PAGE_UP  &kp MEH(F1) &kp MEH(F7) &kp MEH(F8) &kp MEH(F9) &kp MEH(F5)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp MEH(TAB) &kp LEFT  &kp DOWN &kp RIGHT   &kp PAGE_DOWN  &kp MEH(F6) &hmr RGUI MEH(F4) &hmr RCTRL MEH(F5) &hmr LALT MEH(F6) &hmr RSHIFT MEH(F10)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)   &kp MEH(N1)     &kp MEH(F11) &kp MEH(F1) &kp MEH(F2) &kp MEH(F3) &kp MEH(F17)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &trans      &trans        &lt HYP_L MEH(SPACE)        &kp MEH(BACKSPACE)
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        math_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮           ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-&kp MEH(F20) &kp MEH(GRAVE) &kp MEH(UP) &kp MEH(MINUS) &kp MEH(SINGLE_QUOTE)  &kp KP_DIVIDE &kp N7 &kp N8 &kp N9    &kp SPACE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp MEH(LBKT) &kp MEH(LEFT) &kp MEH(DOWN) &kp MEH(RIGHT) &kp MEH(RBKT)        &kp KP_PLUS &kp N4    &kp N5      &kp N6     &kp N0
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────
-&kp MEH(MINUS) &kp MEH(SLASH) &kp MEH(EQUAL) &kp MEH(BACKSLASH) &kp MEH(LBKT) &kp PERIOD &kp N1 &kp N2   &kp N3     &kp COMMA
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &kp LCMD    &lt HYP_L DEL          &trans        &trans
-        //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
-            >;
-        };
-
-        sym_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
- &kp CARET             &kp LT      &kp GT       &kp DOLLAR    &kp PERCENT        &kp AT      &kp AMPS      &kp STAR    &kp SQT &kp GRAVE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp LBRC    &kp LPAR     &kp RPAR      &kp RBRC      &kp EQUAL        &kp BSLH    &kp KP_PLUS    &kp MINUS     &kp SLASH     &kp DQT      
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-              &kp TILDE   &kp LBKT     &kp RBKT      &kp UNDER     &kp HASH         &kp PIPE    &kp EXCL    &kp SEMICOLON &kp COLON     &kp QUESTION
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &trans        &trans        &trans        &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            &kp LC(W)  &kp HOME   &kp UP     &kp END    &kp PG_UP      &to NUM_LOCK_L  &kp N7     &kp N8     &kp N9     &kp FSLH
+            &kp LC(A)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN      &kp MINUS        &kp N4     &kp N5     &kp N6     &kp N0
+            &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)      &kp COMMA        &kp N1     &kp N2     &kp N3     &kp DOT
+                                             &trans     &sc FN_L DEL       &sc FN_L LS(SPACE)  &trans
             >;
         };
 
         fn_layer {
+            display-name = "Fn";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-&bootloader &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_CLR_ALL    &kp F10    &kp F7      &kp F8    &kp F9     &kp C_NEXT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &trans &trans &trans &trans &trans                         &kp F11    &kp F4      &kp F5    &kp F6     &kp C_PP
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE        &kp F13    &kp F1      &kp F2    &kp F3     &kp F12
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &trans     &studio_unlock         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp F13        &bt BT_SEL 2  &kp C_NEXT   &kp C_VOL_UP  &kp C_BRI_UP  &kp SLCK
+            &kp F5     &kp F6     &kp F7     &kp F8     &kp F14        &bt_sel1_clr  &fnhrm LALT C_PP  &fnhrm LCTRL C_MUTE  &fnhrm LGUI C_AL_LOCK  &fnhrm LSHIFT PSCRN
+            &kp F9     &kp F10    &kp F11    &kp F12    &kp F15        &bt BT_SEL 0  &kp C_PREV   &kp C_VOL_DN  &kp C_BRI_DN  &kp INS
+                                             &trans     &bootloader        &sys_reset     &studio_unlock
             >;
         };
-
-        // All mods -> secondary behaviours for the meh layers
-        hyp_layer {
-            // Double thumbs layer
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮           ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-&kp HYP(F20) &kp HYP(GRAVE) &kp HYP(UP) &kp HYP(MINUS) &kp HYP(SINGLE_QUOTE)  &kp HYP(F1) &kp HYP(F7) &kp HYP(F8) &kp HYP(F9) &kp HYP(F5)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp HYP(LBKT) &kp HYP(LEFT) &kp HYP(DOWN) &kp HYP(RIGHT) &kp HYP(RBKT)       &kp HYP(F6) &kp HYP(F4) &kp HYP(F5) &kp HYP(F6) &kp HYP(F10)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp HYP(MINUS) &kp HYP(SLASH) &kp HYP(EQUAL) &kp HYP(BACKSLASH) &kp HYP(LBKT) &kp HYP(F11) &kp HYP(F1) &kp HYP(F2) &kp HYP(F3) &kp HYP(F17)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &trans      &trans          &trans        &trans
-        //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
-            >;
-        };
-
     };
-    
+
     combos {
         compatible = "zmk,combos";
 
@@ -147,61 +82,22 @@
         combo_caps_word {
             timeout-ms = <40>;
             key-positions = <20 29>;
-            bindings = <&tog CAD_L>;
-            require-prior-idle-ms = <200>;  
+            bindings = <&caps_word>;
+            require-prior-idle-ms = <200>;
         };
 
-        combo_exit {
+        combo_escape {
             timeout-ms = <90>;
             key-positions = <22 21>;
             bindings = <&kp ESC>;
-            require-prior-idle-ms = <50>;  
+            require-prior-idle-ms = <50>;
         };
 
-        combo_ret {
-            timeout-ms = <120>; // I miss it often
+        combo_enter {
+            timeout-ms = <120>;
             key-positions = <27 28>;
-            bindings = <&kp RET>;
-            require-prior-idle-ms = <50>;  
+            bindings = <&kp ENTER>;
+            require-prior-idle-ms = <50>;
         };
-
-        // TODO: Review if needed!
-        /* combo_bottom_left { */
-        /*     timeout-ms = <90>; */
-        /*     key-positions = <20 21>; */
-        /*     bindings = <&kp Q>; */
-        /*     require-prior-idle-ms = <50>;   */
-        /* }; */
-        /**/
-        /* combo_top_left_2 { */
-        /*     timeout-ms = <40>; */
-        /*     key-positions = <1 2>; */
-        /*     bindings = <&kp H>; */
-        /*     require-prior-idle-ms = <100>;   */
-        /* }; */
-        /**/
-        /* combo_top_left_3 { */
-        /*     timeout-ms = <40>; */
-        /*     key-positions = <2 3>; */
-        /*     bindings = <&kp J>; */
-        /*     require-prior-idle-ms = <100>;   */
-        /* }; */
-        /**/
-        /**/
-        /* combo_top_right_2 { */
-        /*     timeout-ms = <40>; */
-        /*     key-positions = <6 7>; */
-        /*     bindings = <&kp K>; */
-        /*     require-prior-idle-ms = <100>;   */
-        /* }; */
-        /**/
-        /* combo_top_right_3 { */
-        /*     timeout-ms = <40>; */
-        /*     key-positions = <7 8>; */
-        /*     bindings = <&kp L>; */
-        /*     require-prior-idle-ms = <100>;   */
-        /* }; */
-
     };
-
 };

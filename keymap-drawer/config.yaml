@@ -14,59 +14,56 @@ draw_config:
   style_layer_activators: true
   glyph_tap_size: 22
   svg_extra_style: |
-    .combopos-0 text.combo.tap { font-size: 22px; }
+    .combopos-0 text.combo.tap { font-size: 12px; font-weight: 600; }
+    .combopos-1 text.combo.tap,
+    .combopos-2 text.combo.tap { font-size: 20px; }
 
-    .layer-Nav > text.label { fill: #2563eb; }
-    .layer-Nav rect.key { stroke: #93c5fd; }
-    .layer-Nav .held rect.key { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+    .key.special text.tap { font-size: 20px; }
+
+    .layer-NavNum > text.label { fill: #2563eb; }
+    .layer-NavNum rect.key { stroke: #93c5fd; }
+    .layer-NavNum .held rect.key { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
 
     .layer-Symbols > text.label { fill: #d97706; }
     .layer-Symbols rect.key { stroke: #fcd34d; }
     .layer-Symbols .held rect.key { fill: #fef3c7; stroke: #d97706; stroke-width: 2; }
 
-    .layer-Math > text.label { fill: #0f766e; }
-    .layer-Math rect.key { stroke: #5eead4; }
-    .layer-Math .held rect.key { fill: #ccfbf1; stroke: #0f766e; stroke-width: 2; }
-
     .layer-Fn > text.label { fill: #15803d; }
     .layer-Fn rect.key { stroke: #86efac; }
     .layer-Fn .held rect.key { fill: #dcfce7; stroke: #15803d; stroke-width: 2; }
 
-    .layer-Hyper > text.label { fill: #be123c; }
-    .layer-Hyper rect.key { stroke: #fda4af; }
-    .layer-Hyper .held rect.key { fill: #ffe4e6; stroke: #be123c; stroke-width: 2; }
-
-    .layer-Base .key.trigger-nav rect.key {
+    .key.trigger-nav rect.key {
       fill: #dbeafe; stroke: #2563eb; stroke-width: 2;
     }
-    .layer-Base .key.trigger-symbols rect.key {
+    .key.trigger-symbols rect.key {
       fill: #fef3c7; stroke: #d97706; stroke-width: 2;
     }
-    .layer-Base .key.trigger-math rect.key {
-      fill: #ccfbf1; stroke: #0f766e; stroke-width: 2;
-    }
-    .layer-Base .key.trigger-fn rect.key {
+    .key.trigger-fn rect.key {
       fill: #dcfce7; stroke: #15803d; stroke-width: 2;
     }
-    .key.trigger-hyper rect.key {
-      fill: #ffe4e6; stroke: #be123c; stroke-width: 2;
-    }
-    .layer-Base .key.trigger-nav text.hold { fill: #2563eb; font-weight: bold; }
-    .layer-Base .key.trigger-symbols text.hold { fill: #d97706; font-weight: bold; }
-    .layer-Base .key.trigger-math text.hold { fill: #0f766e; font-weight: bold; }
-    .layer-Base .key.trigger-fn text.hold { fill: #15803d; font-weight: bold; }
-    .key.trigger-hyper text.hold { fill: #be123c; font-weight: bold; }
-
-    .layer-Base .key.odk rect.key {
-      fill: #f3e8ff;
-      stroke: #9333ea;
-      stroke-width: 2;
-    }
-    .layer-Base .key.odk text.tap,
-    .layer-Base text.shifted {
-      fill: #9333ea;
+    .key.trigger-nav text.hold {
+      fill: #2563eb;
+      font-size: 16.5px;
       font-weight: bold;
     }
+    .key.nav-lock text.tap {
+      fill: #2563eb;
+      font-size: 16.5px;
+      font-weight: bold;
+    }
+    .key.nav-lock text.hold {
+      fill: #24292e;
+      font-size: 11px;
+      font-weight: normal;
+    }
+    .key.trigger-symbols text.hold { fill: #d97706; font-weight: bold; }
+    .key.fn-label text.hold {
+      fill: #24292e;
+      font-size: 11px;
+      font-weight: normal;
+      transform: translateY(-4px);
+    }
+
   # Font Awesome Free bluetooth-b, CC BY 4.0: https://fontawesome.com/license/free
   glyphs:
     bluetooth: |
@@ -76,55 +73,22 @@ draw_config:
 
 parse_config:
   raw_binding_map:
-    "&bootloader": "⏻"
+    "&bootloader": "Boot"
+    "&sys_reset": "Reset"
     "&studio_unlock": "Studio 🔓"
-    "&a_circ": â
-    "&a_grave": à
-    "&e_acute": é
-    "&e_grave": è
-    "&e_circ": ê
-    "&i_circ": î
-    "&i_trema": ï
-    "&o_circ": ô
-    "&u_circ": û
-    "&u_grave": ù
-    "&kp RA(C)": ç
-    "&kp LA(Q)": œ
-    "&kp LA(U)": ¨
-    "&kp LA(SQT)": æ
-    "&kp MEH(GRAVE)": "≡←"
-    "&kp MEH(UP)": "◎↑"
-    "&kp MEH(MINUS)": "≡→"
-    "&kp MEH(SINGLE_QUOTE)": "◇←"
-    "&kp MEH(LBKT)": "▣→"
-    "&kp MEH(LEFT)": "◎←"
-    "&kp MEH(DOWN)": "◎↓"
-    "&kp MEH(RIGHT)": "◎→"
-    "&kp MEH(RBKT)": "◇→"
-    "&kp MEH(SLASH)": "▱"
-    "&kp MEH(EQUAL)": "≡"
-    "&kp MEH(BACKSLASH)": "⛶"
-    "&kp MEH(F1)": "◇1"
-    "&kp MEH(F2)": "◇2"
-    "&kp MEH(F3)": "◇3"
-    "&kp MEH(F4)": "◇4"
-    "&kp MEH(F5)": "◇5"
-    "&kp MEH(F6)": "◇6"
-    "&kp MEH(F7)": "◇7"
-    "&kp MEH(F8)": "◇8"
-    "&kp MEH(F9)": "◇9"
-    "&kp MEH(F10)": "◇10"
+    "&bt_sel1_clr": {t: "$$bluetooth$$", h: "1 / ⇧ Clear"}
     "&bt BT_SEL 0": {t: "$$bluetooth$$", h: "0"}
-    "&bt BT_SEL 1": {t: "$$bluetooth$$", h: "1"}
     "&bt BT_SEL 2": {t: "$$bluetooth$$", h: "2"}
-    "&bt BT_CLR_ALL": {t: "$$bluetooth$$", h: "Clear all"}
+    "&fnhrm LALT C_PP": {t: "⏯", h: "⌥"}
+    "&fnhrm LCTRL C_MUTE": {t: "♪×", h: "⌃"}
+    "&fnhrm LGUI C_AL_LOCK": {t: "Lock", h: "◆"}
+    "&fnhrm LSHIFT PSCRN": {t: "Print", h: "⇧"}
+    "&caps_word": "Caps Word"
   layer_legend_map:
-    Accents: "◌"
-    Nav: "⌖"
-    Math: "∑"
+    NumLock: "⌖ Lock"
+    NavNum: "⌖"
     Symbols: "#"
-    Fn: "ƒ"
-    Hyper: "✦"
+    Fn: "fn"
   modifier_fn_map:
     left_ctrl: "⌃"
     right_ctrl: "⌃"
@@ -136,9 +100,6 @@ parse_config:
     right_gui: "◆"
     keycode_combiner: "{mods}{key}"
     mod_combiner: "{mod_1}{mod_2}"
-    special_combinations:
-      left_ctrl+left_alt+left_gui+left_shift: "✦"
-      left_ctrl+left_alt+left_shift: "✣"
   zmk_keycode_map:
     EXCLAMATION: "!"
     EXCL: "!"
@@ -162,8 +123,6 @@ parse_config:
     RPAR: ")"
     EQUAL: "="
     PLUS: "+"
-    KP_PLUS: "+"
-    KP_DIVIDE: "÷"
     MINUS: "-"
     UNDERSCORE: "_"
     UNDER: "_"
@@ -174,16 +133,11 @@ parse_config:
     BACKSLASH: "\\"
     BSLH: "\\"
     PIPE: "|"
-    NON_US_BACKSLASH: "\\"
-    PIPE2: "|"
-    NON_US_BSLH: "|"
     SEMICOLON: ";"
     SEMI: ";"
     COLON: ":"
     SINGLE_QUOTE: "'"
     SQT: "'"
-    APOSTROPHE: "'"
-    APOS: "'"
     DOUBLE_QUOTES: '"'
     DQT: '"'
     COMMA: ","
@@ -203,9 +157,6 @@ parse_config:
     RBRC: "}"
     GRAVE: "`"
     TILDE: "~"
-    NON_US_HASH: "#"
-    NUHS: "#"
-    TILDE2: "~"
     LCTRL: "⌃"
     RCTRL: "⌃"
     LSHFT: "⇧"
@@ -214,7 +165,6 @@ parse_config:
     RALT: "⌥"
     LGUI: "◆"
     RGUI: "◆"
-    LCMD: "◆"
     SPACE: "⎵"
     TAB: "⇥"
     BACKSPACE: "⌫"
@@ -229,19 +179,35 @@ parse_config:
     HOME: "↖"
     END: "↘"
     PAGE_UP: "⇞"
+    PG_UP: "⇞"
     PAGE_DOWN: "⇟"
+    PG_DN: "⇟"
     UP: "↑"
     DOWN: "↓"
     LEFT: "←"
     RIGHT: "→"
     C_NEXT: "⏭"
+    C_PREV: "⏮"
     C_PP: "⏯"
     C_BRI_DN: "☀−"
     C_BRI_UP: "☀+"
     C_VOL_DN: "♪−"
     C_VOL_UP: "♪+"
     C_MUTE: "♪×"
+    C_AL_LOCK: "Lock"
+    PSCRN: "Print"
+    SLCK: "Scroll"
+    INS: "Insert"
   zmk_combos:
     combo_caps_word:
-      l: [CAD]
+      k: "Caps Word"
+      l: [Base]
+      w: 64
+      h: 30
+    combo_escape:
+      k: "⎋"
+      l: [Base]
+    combo_enter:
+      k: "⏎"
+      l: [Base]
   zmk_preamble: "#define KEYMAP_DRAWER"

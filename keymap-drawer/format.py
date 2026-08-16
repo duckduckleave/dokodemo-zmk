@@ -8,70 +8,71 @@ import sys
 import yaml
 
 
-LEGEND_HEIGHT = 68
+LEGEND_HEIGHT = 49
 LEGEND = """<g class="keymap-legend">
-<rect x="20" y="3" width="692" height="60" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
-<text x="30" y="15" style="font-size:11px;text-anchor:start">◆ GUI · ✣ Meh · ✦ Hyper · <tspan style="fill:#9333ea;font-weight:bold">◌ ODK outputs</tspan></text>
-<text x="30" y="34" style="font-size:11px;text-anchor:start"><tspan style="fill:#2563eb;font-weight:bold">⌖ Nav</tspan> · <tspan style="fill:#d97706;font-weight:bold"># Symbols</tspan> · <tspan style="fill:#0f766e;font-weight:bold">∑ Math</tspan> · <tspan style="fill:#15803d;font-weight:bold">ƒ Fn</tspan> · <tspan style="fill:#be123c;font-weight:bold">✦ Hyper</tspan></text>
-<text x="30" y="53" style="font-size:11px;text-anchor:start">◎ Focus · ≡ Group · ◇ Workspace · ▣ Monitor · ▱ Float · ⛶ Fullscreen</text>
+<rect x="20" y="3" width="692" height="41" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
+<text x="30" y="17" style="font-size:11px;text-anchor:start">⌃ Ctrl · ⌥ Alt · ◆ GUI · ⇧ Shift · bottom legend = hold</text>
+<text x="30" y="35" style="font-size:11px;text-anchor:start"><tspan style="fill:#2563eb;font-weight:bold">⌖ NavNum</tspan> · <tspan style="fill:#d97706;font-weight:bold"># Symbols</tspan> · <tspan style="fill:#15803d;font-weight:bold">fn Fn</tspan> · both inner thumbs = Fn</text>
 </g>"""
 
 TRIGGER_TYPES = {
     "⌖": "trigger-nav",
     "#": "trigger-symbols",
-    "∑": "trigger-math",
-    "ƒ": "trigger-fn",
-    "✦": "trigger-hyper",
+    "fn": "trigger-fn",
 }
+
+SPECIAL_TAPS = {
+    "⇧", "⌫", "⎵", "⇥", "⏎", "⎋", "⌦",
+    "↖", "↘", "⇞", "⇟", "↑", "↓", "←", "→",
+    "⇧⎵", "⏮", "⏭", "⏯",
+}
+
+
+def add_type(key: dict, key_type: str) -> None:
+    """Add a CSS type without discarding types assigned by keymap-drawer."""
+    types = key.get("type", "").split()
+    if key_type not in types:
+        types.append(key_type)
+    key["type"] = " ".join(types)
 
 
 def format_yaml(path: Path) -> None:
     keymap = yaml.safe_load(path.read_text(encoding="utf-8"))
-
     layers = keymap.get("layers", {})
-    layers.pop("CAD", None)
 
-    base = layers.get("Base")
-    accents = layers.pop("Accents", None)
-    if base and accents:
-        for position, base_key in enumerate(base):
-            if not isinstance(base_key, dict):
-                base_key = {"t": base_key}
-                base[position] = base_key
-
-            # Preserve ordinary shifted output without styling it as ODK output.
-            if "s" in base_key:
-                base_key["right"] = base_key.pop("s")
-
-            accent_key = accents[position]
-            if isinstance(accent_key, dict):
-                if accent_key.get("type") == "trans":
-                    continue
-                accent_key = accent_key.get("t")
-            if accent_key:
-                base_key["s"] = accent_key
-
-        # Highlight the sticky one-dead-key activator itself.
-        base[8]["type"] = "odk"
+    # Present the persistent numeric mode as a lock of NavNum instead of the
+    # parser's generic layer number + "toggle" label.
+    nav_num = layers.get("NavNum")
+    if nav_num and isinstance(nav_num[5], dict):
+        nav_num[5] = {"t": "⌖", "h": "lock", "type": "trigger-nav nav-lock"}
 
     for layer in layers.values():
-        for key in layer:
+        for position, key in enumerate(layer):
             if not isinstance(key, dict):
-                continue
+                if key not in SPECIAL_TAPS:
+                    continue
+                key = {"t": key}
+                layer[position] = key
+
+            if key.get("t") in SPECIAL_TAPS:
+                add_type(key, "special")
+
             trigger_type = TRIGGER_TYPES.get(key.get("h"))
-            if trigger_type and key.get("type") not in {"held", "trans"}:
-                key["type"] = trigger_type
+            if key.get("h") == "fn":
+                add_type(key, "fn-label")
+            structural_types = set(key.get("type", "").split())
+            if trigger_type and not structural_types.intersection({"held", "trans"}):
+                add_type(key, trigger_type)
+
+    # NumLock is a persistent helper for NavNum, not a separate conceptual
+    # layer users need in the primary diagram.
+    layers.pop("NumLock", None)
 
     ordered_layers = {}
-    for name in ("Base", "Symbols"):
+    for name in ("Base", "Symbols", "NavNum", "Fn"):
         if name in layers:
-            ordered_layers[name] = layers.pop(name)
-    ordered_layers.update(layers)
+            ordered_layers[name] = layers[name]
     keymap["layers"] = ordered_layers
-
-    keymap["combos"] = [
-        combo for combo in keymap.get("combos", []) if "CAD" not in combo.get("l", [])
-    ]
 
     path.write_text(
         yaml.safe_dump(keymap, sort_keys=False, allow_unicode=True),
@@ -81,6 +82,17 @@ def format_yaml(path: Path) -> None:
 
 def format_svg(path: Path) -> None:
     svg = path.read_text(encoding="utf-8")
+
+    # keymap-drawer wraps custom SVGs in another <svg>; converting the
+    # Bluetooth definition to a symbol makes <use> render consistently in
+    # browsers, librsvg, and Chromium's PDF output.
+    svg = re.sub(
+        r'<svg id="bluetooth">\s*<svg viewBox="([^"]+)">(.*?)</svg>\s*</svg>',
+        r'<symbol id="bluetooth" viewBox="\1">\2</symbol>',
+        svg,
+        flags=re.DOTALL,
+    )
+
     opening_end = svg.index(">") + 1
     opening = svg[:opening_end]
 
@@ -91,9 +103,7 @@ def format_svg(path: Path) -> None:
 
     new_height = float(height.group(1)) + LEGEND_HEIGHT
     new_view_height = float(view_box.group(4)) + LEGEND_HEIGHT
-    opening = opening.replace(
-        height.group(0), f'height="{new_height:g}"', 1
-    ).replace(
+    opening = opening.replace(height.group(0), f'height="{new_height:g}"', 1).replace(
         view_box.group(0),
         f'viewBox="{view_box.group(1)} {view_box.group(2)} {view_box.group(3)} {new_view_height:g}"',
         1,

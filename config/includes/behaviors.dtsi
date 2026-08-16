@@ -1,5 +1,7 @@
 #include <behaviors.dtsi>
 
+// Keep home-row mods resistant to same-hand rolls. A hold is resolved when a
+// key on the opposite hand is pressed, while fast typing remains a tap.
 / {
     behaviors {
         hml: home_row_mod_left {
@@ -10,7 +12,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // List of keys on the right side of the keyboard
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>;
             hold-trigger-on-release;
         };
 
@@ -22,46 +24,39 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // List of keys on the left side of the keyboard
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
             hold-trigger-on-release;
         };
 
-        // Ergo-l keys
-        odkexc: od_kc_excl {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&sl 2>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+        // NavNum thumb keys: tap Delete/Shift+Space, hold for Fn.
+        sc: space_cadet {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
         };
 
-        dashion: dash_question {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp QUESTION>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+        // Fn/media dual-role keys intentionally have no bilateral restriction,
+        // allowing Shift+Bluetooth Clear while Fn is held by both thumbs.
+        fnhrm: fn_home_row_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
         };
 
-        pecol: period_colon {
+        bt_sel1_clr: bluetooth_profile_1_or_clear {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp PERIOD>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&bt BT_SEL 1>, <&bt BT_CLR>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
-
-        comacol: comma_semicolo {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // TODO Unused atm, not playing well w/ interruptions (tap-e -> qeu)
-        // qu_q: tap_dance_0 {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_0";
-        //     #binding-cells = <0>;
-        //     bindings = <&qu>, <&kp Q>;
-        // };
-
     };
 };
+
+// Repeating Space/Backspace should continue to feel like ordinary keys.
+&lt { quick-tap-ms = <175>; };

@@ -2,79 +2,54 @@ layout:
   zmk_keyboard: dokodemo
 layers:
   Base:
-  - t: Q
-    s: â
-  - t: C
-    s: ç
-  - t: O
-    s: œ
-  - t: P
-    s: ô
-  - t: W
-  - t: J
-  - t: M
-  - t: D
-    s: _
-  - t: ◌
-    h: sticky
-    right: '!'
-    s: ¨
-    type: odk
-  - t: Y
-    s: û
-  - t: A
-    h: ƒ
-    s: à
-    type: trigger-fn
-  - t: S
-    h: ⌥
-    s: é
-  - t: E
-    h: ⌃
-    s: è
-  - t: N
-    h: ◆
-    s: ê
-  - t: F
-  - t: L
-    s: (
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - A
   - t: R
     h: ◆
-    s: )
-  - t: T
+  - t: S
     h: ⌃
-    s: î
-  - t: I
+  - t: T
     h: ⌥
-    s: ï
-  - t: U
-    s: ù
-  - t: Z
-    s: æ
-  - t: X
-  - t: '-'
-    right: '?'
-  - t: V
-  - t: B
-  - t: .
-    right: ':'
-  - t: H
-  - t: G
-  - t: ','
-    right: ;
-  - t: K
+  - G
+  - M
+  - t: N
+    h: ⌥
+  - t: E
+    h: ⌃
+  - t: I
+    h: ◆
+  - O
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
   - t: ⇧
     h: sticky
+    type: special
   - t: ⌫
     h: ⌖
-    type: trigger-nav
+    type: special trigger-nav
   - t: ⎵
-    h: ∑
-    s: ''''
-    type: trigger-math
+    h: ⌖
+    type: special trigger-nav
   - t: ⇥
     h: '#'
-    type: trigger-symbols
+    type: special trigger-symbols
   Symbols:
   - ^
   - <
@@ -113,175 +88,122 @@ layers:
   - t: ▽
     type: trans
   - type: held
-  Nav:
-  - ✦⇥
-  - ↖
-  - ↑
-  - ↘
-  - ⇞
-  - ◇1
-  - ◇7
-  - ◇8
-  - ◇9
-  - ◇5
-  - ✣⇥
-  - ←
-  - ↓
-  - →
-  - ⇟
-  - ◇6
-  - t: ◇4
-    h: ◆
-  - t: ◇5
-    h: ⌃
-  - t: ◇6
-    h: ⌥
-  - t: ◇10
-    h: ⇧
-  - ◆Z
-  - ◆X
-  - ◆C
-  - ◆V
-  - ✣1
-  - ✣F11
-  - ◇1
-  - ◇2
-  - ◇3
-  - ✣F17
-  - t: ▽
-    type: trans
-  - type: held
-  - t: ✣⎵
-    h: ✦
-    type: trigger-hyper
-  - ✣⌫
-  Math:
-  - ✣F20
-  - ≡←
-  - ◎↑
-  - ≡→
-  - ◇←
-  - ÷
+  NavNum:
+  - ⌃W
+  - t: ↖
+    type: special
+  - t: ↑
+    type: special
+  - t: ↘
+    type: special
+  - t: ⇞
+    type: special
+  - t: ⌖
+    h: lock
+    type: trigger-nav nav-lock
   - '7'
   - '8'
   - '9'
-  - ⎵
-  - ▣→
-  - ◎←
-  - ◎↓
-  - ◎→
-  - ◇→
-  - +
+  - /
+  - ⌃A
+  - t: ←
+    type: special
+  - t: ↓
+    type: special
+  - t: →
+    type: special
+  - t: ⇟
+    type: special
+  - '-'
   - '4'
   - '5'
   - '6'
   - '0'
-  - ≡→
-  - ▱
-  - ≡
-  - ⛶
-  - ▣→
-  - .
+  - ⌃Z
+  - ⌃X
+  - ⌃C
+  - ⌃V
+  - ⌃Y
+  - ','
   - '1'
   - '2'
   - '3'
-  - ','
-  - ◆
+  - .
+  - t: ▽
+    type: trans
   - t: ⌦
-    h: ✦
-    type: trigger-hyper
-  - type: held
+    h: fn
+    type: held special fn-label
+  - t: ⇧⎵
+    h: fn
+    type: special fn-label trigger-fn
   - t: ▽
     type: trans
   Fn:
-  - ⏻
-  - t: $$bluetooth$$
-    h: '0'
-  - t: $$bluetooth$$
-    h: '1'
-  - t: $$bluetooth$$
-    h: '2'
-  - t: $$bluetooth$$
-    h: Clear all
-  - F10
-  - F7
-  - F8
-  - F9
-  - ⏭
-  - type: held
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - F11
-  - F4
-  - F5
-  - F6
-  - ⏯
-  - ☀−
-  - ☀+
-  - ♪−
-  - ♪+
-  - ♪×
-  - F13
   - F1
   - F2
   - F3
+  - F4
+  - F13
+  - t: $$bluetooth$$
+    h: '2'
+  - t: ⏭
+    type: special
+  - ♪+
+  - ☀+
+  - Scroll
+  - F5
+  - F6
+  - F7
+  - F8
+  - F14
+  - t: $$bluetooth$$
+    h: 1 / ⇧ Clear
+  - t: ⏯
+    h: ⌥
+    type: special
+  - t: ♪×
+    h: ⌃
+  - t: Lock
+    h: ◆
+  - t: Print
+    h: ⇧
+  - F9
+  - F10
+  - F11
   - F12
+  - F15
+  - t: $$bluetooth$$
+    h: '0'
+  - t: ⏮
+    type: special
+  - ♪−
+  - ☀−
+  - Insert
   - t: ▽
     type: trans
+  - t: Boot
+    type: held
+  - Reset
   - Studio 🔓
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  Hyper:
-  - ✦F20
-  - ✦`
-  - ✦↑
-  - ✦-
-  - ✦'
-  - ✦F1
-  - ✦F7
-  - ✦F8
-  - ✦F9
-  - ✦F5
-  - ✦[
-  - ✦←
-  - ✦↓
-  - ✦→
-  - ✦]
-  - ✦F6
-  - ✦F4
-  - ✦F5
-  - ✦F6
-  - ✦F10
-  - ✦-
-  - ✦/
-  - ✦=
-  - ✦\
-  - ✦[
-  - ✦F11
-  - ✦F1
-  - ✦F2
-  - ✦F3
-  - ✦F17
-  - t: ▽
-    type: trans
-  - type: held
-  - type: held
-  - t: ▽
-    type: trans
 combos:
+- p:
+  - 20
+  - 29
+  k: Caps Word
+  l:
+  - Base
+  w: 64.0
+  h: 30.0
 - p:
   - 22
   - 21
   k: ⎋
+  l:
+  - Base
 - p:
   - 27
   - 28
   k: ⏎
+  l:
+  - Base
