@@ -23,7 +23,7 @@
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp A      &hml LGUI R &hml LCTRL S &hml LALT T &kp G     &kp M      &hmr LALT N &hmr RCTRL E &hmr RGUI I &kp O
+            &kp A      &hml LALT R &hml LCTRL S &hml LGUI T &kp G     &kp M      &hmr RGUI N &hmr RCTRL E &hmr LALT I &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
@@ -66,7 +66,7 @@
             display-name = "Fn";
             bindings = <
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F13        &bt BT_SEL 2  &kp C_NEXT   &kp C_VOL_UP  &kp C_BRI_UP  &kp SLCK
-            &kp F5     &kp F6     &kp F7     &kp F8     &kp F14        &bt_sel1_clr  &fnhrm LALT C_PP  &fnhrm LCTRL C_MUTE  &fnhrm LGUI C_AL_LOCK  &fnhrm LSHIFT PSCRN
+            &kp F5     &kp F6     &kp F7     &kp F8     &kp F14        &bt_sel1_clr  &fnhrm LGUI C_PP  &fnhrm LCTRL C_MUTE  &fnhrm LALT C_AL_LOCK  &fnhrm LSHIFT PSCRN
             &kp F9     &kp F10    &kp F11    &kp F12    &kp F15        &bt BT_SEL 0  &kp C_PREV   &kp C_VOL_DN  &kp C_BRI_DN  &kp INS
                                              &trans     &bootloader        &sys_reset     &studio_unlock
             >;
@@ -79,7 +79,7 @@
             display-name = "Gaming";
             bindings = <
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &hmr LALT J &hmr RCTRL K &hmr RGUI L &kp SEMI
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &hmr RGUI J &hmr RCTRL K &hmr LALT L &kp SEMI
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
                                          &kp LSHFT  &kp SPACE            &lt NAV_NUM_L BSPC  &lt SYM_L TAB
             >;

@@ -14,19 +14,19 @@ layers:
   - ;
   - A
   - t: R
-    h: ◆
+    h: ⌥
   - t: S
     h: ⌃
   - t: T
-    h: ⌥
+    h: ◆
   - G
   - M
   - t: N
-    h: ⌥
+    h: ◆
   - t: E
     h: ⌃
   - t: I
-    h: ◆
+    h: ⌥
   - O
   - Z
   - X
@@ -160,12 +160,12 @@ layers:
   - t: $$bluetooth$$
     h: 1 / ⇧ Clear
   - t: ⏯
-    h: ⌥
+    h: ◆
     type: special
   - t: ♪×
     h: ⌃
   - t: Lock
-    h: ◆
+    h: ⌥
   - t: Print
     h: ⇧
   - F9
@@ -204,11 +204,11 @@ layers:
   - G
   - H
   - t: J
-    h: ⌥
+    h: ◆
   - t: K
     h: ⌃
   - t: L
-    h: ◆
+    h: ⌥
   - ;
   - Z
   - X

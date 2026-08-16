@@ -131,7 +131,7 @@
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
 <text x="0" y="-13" class="base" text-anchor="middle" font-size="29">R</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
-<text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">◆</text>
+<text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">⌥</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">(</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">←</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F6</text>
@@ -149,7 +149,7 @@
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
 <text x="0" y="-13" class="base" text-anchor="middle" font-size="29">T</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
-<text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">⌥</text>
+<text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">◆</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">}</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">→</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F8</text>
@@ -172,7 +172,7 @@
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
 <text x="0" y="-13" class="base" text-anchor="middle" font-size="29">N</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
-<text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">⌥</text>
+<text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">◆</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">+</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">4</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">⏯</text>
@@ -190,7 +190,7 @@
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
 <text x="0" y="-13" class="base" text-anchor="middle" font-size="29">I</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
-<text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">◆</text>
+<text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">⌥</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">/</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">6</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">Lock</text>

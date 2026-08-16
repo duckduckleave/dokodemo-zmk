@@ -90,9 +90,9 @@ parse_config:
     "&bt_sel1_clr": {t: "$$bluetooth$$", h: "1 / ⇧ Clear"}
     "&bt BT_SEL 0": {t: "$$bluetooth$$", h: "0"}
     "&bt BT_SEL 2": {t: "$$bluetooth$$", h: "2"}
-    "&fnhrm LALT C_PP": {t: "⏯", h: "⌥"}
+    "&fnhrm LGUI C_PP": {t: "⏯", h: "◆"}
     "&fnhrm LCTRL C_MUTE": {t: "♪×", h: "⌃"}
-    "&fnhrm LGUI C_AL_LOCK": {t: "Lock", h: "◆"}
+    "&fnhrm LALT C_AL_LOCK": {t: "Lock", h: "⌥"}
     "&fnhrm LSHIFT PSCRN": {t: "Print", h: "⇧"}
     "&caps_word": "Caps Word"
   layer_legend_map:

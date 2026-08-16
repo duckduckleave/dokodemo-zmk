@@ -6,7 +6,7 @@ compact layer design.
 
 Highlights:
 
-- bilateral home-row mods in GUI, Ctrl, Alt order;
+- bilateral home-row mods in Alt, Ctrl, GUI order;
 - sticky Shift plus dual Backspace/Space NavNum thumb keys;
 - a shared navigation and numpad layer;
 - Selenium-style Symbols and Fn/Media layers; and
