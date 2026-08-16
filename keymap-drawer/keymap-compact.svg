@@ -58,14 +58,14 @@
 </g>
 <g transform="translate(204 128) rotate(0)" class="key key-1">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">W</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">C</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">&lt;</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">↖</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F2</text>
 </g>
 <g transform="translate(312 106) rotate(0)" class="key key-2">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">F</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">O</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">&gt;</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">↑</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F3</text>
@@ -79,7 +79,7 @@
 </g>
 <g transform="translate(528 134) rotate(0)" class="key key-4">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">B</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">W</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">%</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">⇞</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F13</text>
@@ -94,28 +94,28 @@
 </g>
 <g transform="translate(1024 124) rotate(0)" class="key key-6">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">L</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">M</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">&amp;</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">7</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">⏭</text>
 </g>
 <g transform="translate(1132 106) rotate(0)" class="key key-7">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">U</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">D</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">*</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">8</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">♪+</text>
 </g>
 <g transform="translate(1240 128) rotate(0)" class="key key-8">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">Y</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">⇧•</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">&#x27;</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">9</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">☀+</text>
 </g>
 <g transform="translate(1348 190) rotate(0)" class="key key-9">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">;</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">Y</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">`</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">/</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">ScrLk</text>
@@ -129,7 +129,7 @@
 </g>
 <g transform="translate(204 236) rotate(0)" class="key key-11">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">R</text>
+<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">S</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
 <text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">⌥</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">(</text>
@@ -138,7 +138,7 @@
 </g>
 <g transform="translate(312 214) rotate(0)" class="key key-12">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">S</text>
+<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">E</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
 <text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">⌃</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">)</text>
@@ -147,7 +147,7 @@
 </g>
 <g transform="translate(420 232) rotate(0)" class="key key-13">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">T</text>
+<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">N</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
 <text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">◆</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">}</text>
@@ -156,21 +156,21 @@
 </g>
 <g transform="translate(528 242) rotate(0)" class="key key-14">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">G</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">F</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">=</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">⇟</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F14</text>
 </g>
 <g transform="translate(916 242) rotate(0)" class="key key-15">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">M</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">L</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">\</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">-</text>
 <use href="#bluetooth" x="-45" y="32" width="11" height="22" class="fn"/><text x="-30" y="43" class="fn" text-anchor="start" font-size="12.0219">1/⇧clr</text>
 </g>
 <g transform="translate(1024 232) rotate(0)" class="key key-16">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">N</text>
+<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">R</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
 <text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">◆</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">+</text>
@@ -179,7 +179,7 @@
 </g>
 <g transform="translate(1132 214) rotate(0)" class="key key-17">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">E</text>
+<text x="0" y="-13" class="base" text-anchor="middle" font-size="29">T</text>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge"/>
 <text x="0" y="21" class="base-hold" text-anchor="middle" font-size="15.5">⌃</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">-</text>
@@ -197,7 +197,7 @@
 </g>
 <g transform="translate(1348 298) rotate(0)" class="key key-19">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">O</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">U</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">&quot;</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">0</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">PrtSc</text>
@@ -218,28 +218,28 @@
 </g>
 <g transform="translate(312 322) rotate(0)" class="key key-22">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">C</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">-</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">]</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">⌃C</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F11</text>
 </g>
 <g transform="translate(420 340) rotate(0)" class="key key-23">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">D</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">V</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">_</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">⌃V</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F12</text>
 </g>
 <g transform="translate(528 350) rotate(0)" class="key key-24">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">V</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">B</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">#</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">⌃Y</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">F15</text>
 </g>
 <g transform="translate(916 350) rotate(0)" class="key key-25">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">K</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">.</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">|</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">,</text>
 <use href="#bluetooth" x="-45" y="32" width="11" height="22" class="fn"/><text x="-30" y="43" class="fn" text-anchor="start" font-size="14">0</text>
@@ -253,21 +253,21 @@
 </g>
 <g transform="translate(1132 322) rotate(0)" class="key key-27">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">,</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">G</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">;</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">2</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">♪−</text>
 </g>
 <g transform="translate(1240 344) rotate(0)" class="key key-28">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">.</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">,</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">:</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">3</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">☀−</text>
 </g>
 <g transform="translate(1348 406) rotate(0)" class="key key-29">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
-<text x="0" y="7" class="base" text-anchor="middle" font-size="29">/</text>
+<text x="0" y="7" class="base" text-anchor="middle" font-size="29">K</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="19">?</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="20">.</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">Ins</text>

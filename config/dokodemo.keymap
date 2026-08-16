@@ -4,14 +4,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "includes/behaviors.dtsi"
 
 #define BASE_L 0
-#define NUM_LOCK_L 1
-#define SYM_L 2
-#define NAV_NUM_L 3
-#define FN_L 4
-#define GAMING_L 5
+#define ODK_L 1
+#define NUM_LOCK_L 2
+#define SYM_L 3
+#define NAV_NUM_L 4
+#define FN_L 5
+#define GAMING_L 6
+
+#include "includes/behaviors.dtsi"
+#include "includes/macros.dtsi"
 
 / {
     keymap {
@@ -21,14 +24,24 @@
             display-name = "Base";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
+            &kp Q      &kp C      &kp O      &kp P      &kp W          &kp J      &kp M      &kp D      &odkexc    &kp Y
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp A      &hml LALT R &hml LCTRL S &hml LGUI T &kp G     &kp M      &hmr RGUI N &hmr RCTRL E &hmr LALT I &kp O
+            &kp A      &hml LALT S &hml LCTRL E &hml LGUI N &kp F     &kp L      &hmr RGUI R &hmr RCTRL T &hmr LALT I &kp U
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &kp X      &dashion   &kp V      &kp B          &pecol     &kp H      &kp G      &comacol   &kp K
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                          &sk LSHFT  &lt NAV_NUM_L BSPC    &lt NAV_NUM_L SPACE  &lt SYM_L TAB
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        one_dead_key_layer {
+            display-name = "Accents";
+            bindings = <
+            &a_circ     &kp RA(C)   &kp LA(Q)   &o_circ    &trans       &trans    &trans    &kp UNDER  &kp LA(U)  &u_circ
+            &a_grave    &e_acute    &e_grave    &e_circ    &trans       &kp LPAR  &kp RPAR  &i_circ    &i_trema   &u_grave
+            &kp LA(SQT) &trans      &trans      &trans     &trans       &trans    &trans    &trans     &trans     &trans
+                                                   &trans     &trans       &kp APOS  &trans
             >;
         };
 
