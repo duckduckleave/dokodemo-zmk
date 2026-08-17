@@ -1,16 +1,15 @@
 # ZMK Configuration for DokoDemo
 
-This branch contains the personal DokoDemo firmware and keymap. It uses
-firmware-level Ergo‑L on a QWERTY host while retaining the default keymap's
-compact Selenium-inspired layers.
+This repository contains the default DokoDemo firmware and keymap. The keymap
+uses firmware-level Colemak-DH on a QWERTY host and is inspired by Selenium's
+compact layer design.
 
 Highlights:
 
 - bilateral home-row mods in Alt, Ctrl, GUI order;
-- Ergo‑L punctuation morphs and a One Dead Key layer for accented letters;
 - sticky Shift plus dual Backspace/Space NavNum thumb keys;
 - a shared navigation and numpad layer;
-- Selenium-style Symbols and Fn/Media layers; and
+- Selenium-style Symbols and Fn/Media layers;
 - Caps Word, Escape, and Enter combos; and
 - a toggleable QWERTY gaming layer with dedicated left-thumb Space.
 

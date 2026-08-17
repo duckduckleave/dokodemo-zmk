@@ -25,8 +25,6 @@ LAYER_SLOTS = {
     "Fn": ("bl", "fn", 14.5),
 }
 
-ACCENT_SLOT = ("br", "accents", 17.5)
-
 NAV_ICONS = {
     "↖": "arrow-home",
     "↑": "arrow-up",
@@ -162,12 +160,7 @@ def draw_key(position: dict, center: tuple[float, float, float], index: int, lay
 
     base_value = layers["Base"][index]
     base_tap, base_hold = key_label(base_value)
-    base_type = str(base_value.get("type", "")) if isinstance(base_value, dict) else ""
-    if "odk" in base_type.split():
-        out.append('<use href="#ergol-logo" x="-27" y="-36" width="54" height="54" class="ergol-logo"/>')
-        out.append(svg_text(0, 29, "TOUCHE MORTE", "dead-key-label", size=8.8))
-        base_tap, base_hold = "", ""
-    elif base_hold == "sticky":
+    if base_hold == "sticky":
         out.append('<use href="#shift" x="-25" y="-39" width="50" height="50" class="sticky-shift-icon"/>')
         out.append(svg_text(0, 30, "MAJ. 1×", "sticky-shift-label", size=11.5))
         base_tap, base_hold = "", ""
@@ -248,21 +241,6 @@ def draw_key(position: dict, center: tuple[float, float, float], index: int, lay
             )
         )
 
-    if isinstance(base_value, dict) and base_value.get("s"):
-        slot, css_class, max_size = ACCENT_SLOT
-        x, y, anchor = slots[slot]
-        accent = str(base_value["s"])
-        out.append(
-            svg_text(
-                x,
-                y,
-                accent,
-                css_class,
-                anchor=anchor,
-                size=fitted_size(accent, max_size, 48, 10),
-            )
-        )
-
     if index in {20, 29}:
         out.append('<rect x="-16" y="28" width="32" height="18" rx="9" class="caps-word-pill"/>')
         out.append(svg_text(0, 37.5, "CW", "caps-word-pill-label", size=11.5))
@@ -281,7 +259,7 @@ def mock_key(center_x: float, center_y: float) -> str:
 <g class="mock-pill symbols"><rect x="-130" y="-78" width="96" height="25" rx="12.5"/>{svg_text(-82, -65, "#  SYMBOLES", "", size=10.5)}</g>
 <g class="mock-pill navnum"><rect x="34" y="-78" width="96" height="25" rx="12.5"/><use href="#navpad" x="45" y="-73" width="16" height="16"/>{svg_text(67, -65, "NAVNUM", "", anchor="start", size=11.5)}</g>
 <g class="mock-pill fn"><rect x="-101" y="53" width="66" height="25" rx="12.5"/>{svg_text(-68, 66, "fn", "", size=13)}</g>
-<g class="mock-pill accents"><rect x="35" y="53" width="96" height="25" rx="12.5"/><use href="#ergol-logo" x="45" y="56" width="20" height="20"/>{svg_text(70, 66, "ACCENTS", "", anchor="start", size=10.5)}</g>
+<g class="mock-pill gaming"><rect x="35" y="53" width="96" height="25" rx="12.5"/><use href="#gamepad" x="45" y="56" width="20" height="20"/>{svg_text(70, 66, "JEU", "", anchor="start", size=10.5)}</g>
 <g class="legend-anatomy">
 {svg_text(0, 92, "centre = frappe  ·  pastille = maintien", "legend-help", size=10.5)}
 </g>
@@ -438,22 +416,6 @@ def main() -> None:
   <symbol id="space" viewBox="0 0 44 28"><path d="M5 8v12h34V8"/></symbol>
   <symbol id="tab" viewBox="0 0 44 32"><path d="M6 6v20m32-20v20M11 16h20m-7-7 7 7-7 7"/></symbol>
   <symbol id="shift" viewBox="0 0 50 50"><path d="m25 4 18 19H34v19H16V23H7L25 4Z"/></symbol>
-  <!-- Official Ergo-L mark: https://ergol.org/favicon.svg -->
-  <symbol id="ergol-logo" viewBox="-128 -128 256 256">
-    <g transform="scale(1.09)" stroke="#343048" stroke-width="1.25">
-      <path fill="#14b830" transform="rotate(0)" d="M74.363-55.96a96 96 0 0 0-12.776-22.795 100 100 90 0 0-92.302-16.446 100 100 90 0 0-25.833 12.79 96 96 0 0 1 2.34-.951A96 96 0 0 1 66.76-21.727a96 96 0 0 1 3.588 44.171 96 96 0 0 0 4.015-78.403z"/>
-      <path fill="#9b36e2" transform="rotate(72)" d="M74.363-55.96a96 96 0 0 0-12.776-22.795 100 100 90 0 0-92.302-16.446 100 100 90 0 0-25.833 12.79 96 96 0 0 1 2.34-.951A96 96 0 0 1 66.76-21.727a96 96 0 0 1 3.588 44.171 96 96 0 0 0 4.015-78.403z"/>
-      <path fill="#e83030" transform="rotate(144)" d="M74.363-55.96a96 96 0 0 0-12.776-22.795 100 100 90 0 0-92.302-16.446 100 100 90 0 0-25.833 12.79 96 96 0 0 1 2.34-.951A96 96 0 0 1 66.76-21.727a96 96 0 0 1 3.588 44.171 96 96 0 0 0 4.015-78.403z"/>
-      <path fill="#0088cc" transform="rotate(216)" d="M74.363-55.96a96 96 0 0 0-12.776-22.795 100 100 90 0 0-92.302-16.446 100 100 90 0 0-25.833 12.79 96 96 0 0 1 2.34-.951A96 96 0 0 1 66.76-21.727a96 96 0 0 1 3.588 44.171 96 96 0 0 0 4.015-78.403z"/>
-      <path fill="#f4c025" transform="rotate(288)" d="M74.363-55.96a96 96 0 0 0-12.776-22.795 100 100 90 0 0-92.302-16.446 100 100 90 0 0-25.833 12.79 96 96 0 0 1 2.34-.951A96 96 0 0 1 66.76-21.727a96 96 0 0 1 3.588 44.171 96 96 0 0 0 4.015-78.403z"/>
-    </g>
-    <g transform="rotate(36)" stroke="#343048" stroke-linecap="round" stroke-linejoin="round">
-      <path fill="#edebf0" stroke-width="4" d="M0-141 A820,820 0 0 1 72,103 A270,270 0 0 0 0,16.5 A270,270 0 0 0 -72,103 A820,820 0 0 1 0-141"/>
-      <path fill="#343048" stroke="none" transform="translate(0 -36) scale(1.5)" d="M0-16 3.652-4.76h11.817l-9.56 6.944 3.65 11.24L0 6.474l-9.561 6.947 3.652-11.24-9.56-6.943h11.817L0-16z"/>
-      <path fill="#edebf0" stroke-width="2" transform="translate(0 40) scale(1.3 1.4)" d="M0,0 C-10,0-22,8-22,20 C-22,30-7,50,0,70 C7,50,22,30,22,20 C22,8,10,0,0,0z"/>
-      <path fill="#343048" stroke="none" transform="translate(0 39) scale(.8 .7)" d="M0,0 C-10,0-22,8-22,20 C-22,30-7,50,0,70 C7,50,22,30,22,20 C22,8,10,0,0,0z"/>
-    </g>
-  </symbol>
 </defs>
 <style>
   svg {{ font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace; fill: #f8fafc; background: #181d27; }}
@@ -466,7 +428,6 @@ def main() -> None:
   .base-icon {{ color: #f8fafc; stroke-width: 2.5; }}
   .sticky-shift-icon {{ fill: #f0abfc; color: #f0abfc; }}
   .sticky-shift-label {{ fill: #f0abfc; font-family: system-ui,sans-serif; font-weight: 800; letter-spacing: 1.4px; }}
-  .dead-key-label {{ fill: #d8b4fe; font-family: system-ui,sans-serif; font-weight: 800; letter-spacing: 1.1px; }}
   .key rect.hold-badge, .mock-key rect.hold-badge {{ fill: #111827; stroke: #94a3b8; stroke-width: 1.7; }}
   .key rect.hold-badge.nav-hold {{ stroke: #60a5fa; }}
   .key rect.hold-badge.symbol-hold {{ stroke: #fbbf24; }}
@@ -476,7 +437,6 @@ def main() -> None:
   .symbol-at {{ font-family: system-ui,sans-serif; font-weight: 750; }}
   .navnum {{ fill: #60a5fa; color: #60a5fa; font-weight: 750; }}
   .fn {{ fill: #86b99c; color: #86b99c; font-family: system-ui,sans-serif; font-weight: 650; opacity: .76; }}
-  .accents {{ fill: #c084fc; color: #c084fc; font-family: system-ui,sans-serif; font-weight: 750; }}
   .gaming {{ fill: #a98ac2; color: #a98ac2; font-weight: 550; }}
   .title {{ font: 750 27px system-ui,sans-serif; letter-spacing: -.3px; }}
   .subtitle {{ font: 12px system-ui,sans-serif; fill: #9aa7b7; letter-spacing: .6px; }}
@@ -519,7 +479,7 @@ def main() -> None:
   .combo-label {{ fill: #f8fafc; font-family: system-ui,sans-serif; font-weight: 750; letter-spacing: .15px; }}
 </style>
 <rect class="background" width="100%" height="100%" rx="14"/>
-<text x="36" y="29" class="title">DokoDemo · Ergo-L</text>
+<text x="36" y="29" class="title">DokoDemo · Colemak-DH</text>
 {keys}
 {combo_lines}
 {sticky_callout(centers[30])}

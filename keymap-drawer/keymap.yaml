@@ -2,65 +2,42 @@ layout:
   zmk_keyboard: dokodemo
 layers:
   Base:
-  - t: Q
-    s: â
-  - t: C
-    s: ç
-  - t: O
-    s: œ
-  - t: P
-    s: ô
-  - t: W
-  - t: J
-  - t: M
-  - t: D
-    s: _
-  - t: ◌
-    h: sticky
-    right: '!'
-    s: ¨
-    type: odk
-  - t: Y
-    s: û
-  - t: A
-    s: à
-  - t: S
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - A
+  - t: R
     h: ⌥
-    s: é
-  - t: E
+  - t: S
     h: ⌃
-    s: è
+  - t: T
+    h: ◆
+  - G
+  - M
   - t: N
     h: ◆
-    s: ê
-  - t: F
-  - t: L
-    s: (
-  - t: R
-    h: ◆
-    s: )
-  - t: T
+  - t: E
     h: ⌃
-    s: î
   - t: I
     h: ⌥
-    s: ï
-  - t: U
-    s: ù
-  - t: Z
-    s: æ
-  - t: X
-  - t: '-'
-    right: '?'
-  - t: V
-  - t: B
-  - t: .
-    right: ':'
-  - t: H
-  - t: G
-  - t: ','
-    right: ;
-  - t: K
+  - O
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
   - t: ⇧
     h: sticky
     type: special
@@ -69,7 +46,6 @@ layers:
     type: special trigger-nav
   - t: ⎵
     h: ⌖
-    s: ''''
     type: special trigger-nav
   - t: ⇥
     h: '#'

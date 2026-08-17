@@ -11,7 +11,7 @@ import yaml
 LEGEND_HEIGHT = 49
 LEGEND = """<g class="keymap-legend">
 <rect x="20" y="3" width="692" height="41" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
-<text x="30" y="17" style="font-size:11px;text-anchor:start">⌃ Ctrl · ⌥ Alt · ◆ GUI · ⇧ Shift · <tspan style="fill:#9333ea;font-weight:bold">purple top = ODK output</tspan> · bottom = hold</text>
+<text x="30" y="17" style="font-size:11px;text-anchor:start">⌃ Ctrl · ⌥ Alt · ◆ GUI · ⇧ Shift · bottom legend = hold</text>
 <text x="30" y="35" style="font-size:11px;text-anchor:start"><tspan style="fill:#2563eb;font-weight:bold">⌖ NavNum</tspan> · <tspan style="fill:#d97706;font-weight:bold"># Symbols</tspan> · <tspan style="fill:#15803d;font-weight:bold">fn Fn</tspan> · <tspan style="fill:#7c3aed;font-weight:bold">Gaming</tspan> · both inner thumbs = Fn</text>
 </g>"""
 
@@ -45,31 +45,6 @@ def format_yaml(path: Path) -> None:
     nav_num = layers.get("NavNum")
     if nav_num and isinstance(nav_num[5], dict):
         nav_num[5] = {"t": "⌖", "h": "lock", "type": "trigger-nav nav-lock"}
-
-    # Fold the one-shot accent layer into Base as purple shifted labels. This
-    # keeps the diagram compact while showing every One Dead Key output at the
-    # physical key that produces it.
-    base = layers.get("Base")
-    accents = layers.pop("Accents", None)
-    if base and accents:
-        for position, base_key in enumerate(base):
-            if not isinstance(base_key, dict):
-                base_key = {"t": base_key}
-                base[position] = base_key
-
-            # Keep punctuation morphs visible at the right of their base key.
-            if "s" in base_key:
-                base_key["right"] = base_key.pop("s")
-
-            accent_key = accents[position]
-            if isinstance(accent_key, dict):
-                if accent_key.get("type") == "trans":
-                    continue
-                accent_key = accent_key.get("t")
-            if accent_key:
-                base_key["s"] = accent_key
-
-        add_type(base[8], "odk")
 
     for layer in layers.values():
         for position, key in enumerate(layer):

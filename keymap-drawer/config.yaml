@@ -35,15 +35,6 @@ draw_config:
     .layer-Gaming > text.label { fill: #7c3aed; }
     .layer-Gaming rect.key { stroke: #c4b5fd; }
 
-    .layer-Base .key.odk rect.key {
-      fill: #f3e8ff; stroke: #9333ea; stroke-width: 2;
-    }
-    .layer-Base .key.odk text.tap,
-    .layer-Base text.shifted {
-      fill: #9333ea;
-      font-weight: bold;
-    }
-
     .key.trigger-nav rect.key {
       fill: #dbeafe; stroke: #2563eb; stroke-width: 2;
     }
@@ -104,22 +95,7 @@ parse_config:
     "&fnhrm LALT C_AL_LOCK": {t: "Lock", h: "⌥"}
     "&fnhrm LSHIFT PSCRN": {t: "Print", h: "⇧"}
     "&caps_word": "Caps Word"
-    "&a_circ": â
-    "&a_grave": à
-    "&e_acute": é
-    "&e_grave": è
-    "&e_circ": ê
-    "&i_circ": î
-    "&i_trema": ï
-    "&o_circ": ô
-    "&u_circ": û
-    "&u_grave": ù
-    "&kp RA(C)": ç
-    "&kp LA(Q)": œ
-    "&kp LA(U)": ¨
-    "&kp LA(SQT)": æ
   layer_legend_map:
-    Accents: "◌"
     NumLock: "⌖ Lock"
     NavNum: "⌖"
     Symbols: "#"
@@ -174,8 +150,6 @@ parse_config:
     COLON: ":"
     SINGLE_QUOTE: "'"
     SQT: "'"
-    APOSTROPHE: "'"
-    APOS: "'"
     DOUBLE_QUOTES: '"'
     DQT: '"'
     COMMA: ","

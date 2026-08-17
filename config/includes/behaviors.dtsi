@@ -55,35 +55,6 @@
             bindings = <&bt BT_SEL 1>, <&bt BT_CLR>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
-
-        // Ergo-L's One Dead Key enters the accent layer unless shifted.
-        odkexc: one_dead_key_or_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&sl ODK_L>, <&kp EXCL>;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-
-        dashion: dash_or_question {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp QMARK>;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-
-        pecol: period_or_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-
-        comacol: comma_or_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
     };
 };
 
