@@ -1,3 +1,7 @@
+![Compact DokoDemo keymap](keymap-drawer/keymap-compact.png)
+
+[Download the SVG version](keymap-drawer/keymap-compact.svg).
+
 # ZMK Configuration for DokoDemo
 
 This repository contains the default DokoDemo firmware and keymap. The keymap
@@ -13,17 +17,13 @@ Highlights:
 - Caps Word, Escape, and Enter combos; and
 - a toggleable QWERTY gaming layer with dedicated left-thumb Space.
 
-## Compact keymap
-
-![Compact DokoDemo keymap](keymap-drawer/keymap-compact.png)
-
-[Download the SVG version](keymap-drawer/keymap-compact.svg).
-
 ## Detailed keymap
 
 ![DokoDemo keymap](keymap-drawer/keymap.svg)
 
 Regenerate the parsed keymap and SVG with:
+
+## Re-building the keymap
 
 ```sh
 make keymap
