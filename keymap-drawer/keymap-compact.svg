@@ -402,10 +402,10 @@
 <text x="0" y="-12" class="mock-base" text-anchor="middle" font-size="22">BASE</text>
 <rect x="-34" y="4" width="68" height="25" rx="12.5" class="hold-badge"/>
 <text x="0" y="17" class="base-hold" text-anchor="middle" font-size="10.5">MAINTIEN</text>
-<g class="mock-pill symbols"><rect x="-130" y="-78" width="96" height="25" rx="12.5"/><text x="-82" y="-65" class="" text-anchor="middle" font-size="10.5">SYMBOLES ↖</text></g>
-<g class="mock-pill navnum"><rect x="34" y="-78" width="96" height="25" rx="12.5"/><text x="82" y="-65" class="" text-anchor="middle" font-size="12">↗ NAVNUM</text></g>
-<g class="mock-pill fn"><rect x="-101" y="53" width="66" height="25" rx="12.5"/><text x="-68" y="66" class="" text-anchor="middle" font-size="12.5">FN ↙</text></g>
-<g class="mock-pill accents"><rect x="35" y="53" width="96" height="25" rx="12.5"/><text x="83" y="66" class="" text-anchor="middle" font-size="12">ACCENTS ↘</text></g>
+<g class="mock-pill symbols"><rect x="-130" y="-78" width="96" height="25" rx="12.5"/><text x="-82" y="-65" class="" text-anchor="middle" font-size="10.5">#  SYMBOLES</text></g>
+<g class="mock-pill navnum"><rect x="34" y="-78" width="96" height="25" rx="12.5"/><use href="#navpad" x="45" y="-73" width="16" height="16"/><text x="67" y="-65" class="" text-anchor="start" font-size="11.5">NAVNUM</text></g>
+<g class="mock-pill fn"><rect x="-101" y="53" width="66" height="25" rx="12.5"/><text x="-68" y="66" class="" text-anchor="middle" font-size="13">fn</text></g>
+<g class="mock-pill accents"><rect x="35" y="53" width="96" height="25" rx="12.5"/><use href="#ergol-logo" x="45" y="56" width="20" height="20"/><text x="70" y="66" class="" text-anchor="start" font-size="10.5">ACCENTS</text></g>
 <g class="legend-anatomy">
 <text x="0" y="92" class="legend-help" text-anchor="middle" font-size="10.5">centre = frappe  ·  pastille = maintien</text>
 </g>

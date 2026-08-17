@@ -278,10 +278,10 @@ def mock_key(center_x: float, center_y: float) -> str:
 {svg_text(0, -12, "BASE", "mock-base", size=22)}
 <rect x="-34" y="4" width="68" height="25" rx="12.5" class="hold-badge"/>
 {svg_text(0, 17, "MAINTIEN", "base-hold", size=10.5)}
-<g class="mock-pill symbols"><rect x="-130" y="-78" width="96" height="25" rx="12.5"/>{svg_text(-82, -65, "SYMBOLES ↖", "", size=10.5)}</g>
-<g class="mock-pill navnum"><rect x="34" y="-78" width="96" height="25" rx="12.5"/>{svg_text(82, -65, "↗ NAVNUM", "", size=12)}</g>
-<g class="mock-pill fn"><rect x="-101" y="53" width="66" height="25" rx="12.5"/>{svg_text(-68, 66, "FN ↙", "", size=12.5)}</g>
-<g class="mock-pill accents"><rect x="35" y="53" width="96" height="25" rx="12.5"/>{svg_text(83, 66, "ACCENTS ↘", "", size=12)}</g>
+<g class="mock-pill symbols"><rect x="-130" y="-78" width="96" height="25" rx="12.5"/>{svg_text(-82, -65, "#  SYMBOLES", "", size=10.5)}</g>
+<g class="mock-pill navnum"><rect x="34" y="-78" width="96" height="25" rx="12.5"/><use href="#navpad" x="45" y="-73" width="16" height="16"/>{svg_text(67, -65, "NAVNUM", "", anchor="start", size=11.5)}</g>
+<g class="mock-pill fn"><rect x="-101" y="53" width="66" height="25" rx="12.5"/>{svg_text(-68, 66, "fn", "", size=13)}</g>
+<g class="mock-pill accents"><rect x="35" y="53" width="96" height="25" rx="12.5"/><use href="#ergol-logo" x="45" y="56" width="20" height="20"/>{svg_text(70, 66, "ACCENTS", "", anchor="start", size=10.5)}</g>
 <g class="legend-anatomy">
 {svg_text(0, 92, "centre = frappe  ·  pastille = maintien", "legend-help", size=10.5)}
 </g>
