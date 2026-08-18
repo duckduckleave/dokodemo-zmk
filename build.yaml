@@ -5,13 +5,13 @@
 # pass flags to the build command, `snippet` to add a Zephyr snippet, and
 # `artifact-name` to assign a name to distinguish build outputs from each other:
 #
-# board: [ "nice_nano_v2" ]
+# board: [ "nice_nano//zmk" ]
 # shield: [ "corne_left", "corne_right" ]
 # include:
 #   - board: bdn9_rev2
-#   - board: nice_nano_v2
+#   - board: nice_nano//zmk
 #     shield: reviung41
-#   - board: nice_nano_v2
+#   - board: nice_nano//zmk
 #     shield: corne_left
 #     snippet: studio-rpc-usb-uart
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
@@ -19,26 +19,26 @@
 #
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: dokodemo_left rgbled_adapter
     artifact-name: dokodemo_left
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: dokodemo_right rgbled_adapter
     artifact-name: dokodemo_right
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
     artifact-name: settings_reset_xiao
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset_nice_nano
 
   ## To build with ZMK Studio support, uncomment the following block
   ## by removing the leading '#' from each line.
 
-  #  - board: seeeduino_xiao_ble
+  #  - board: xiao_ble//zmk
   #    shield: dokodemo_left rgbled_adapter
   #    snippet: studio-rpc-usb-uart
   #    cmake-args: -DCONFIG_ZMK_STUDIO=y
@@ -47,13 +47,13 @@ include:
   ## See ZMK documentation on how to build and flash the firmware for dongle mode.
   ## The "board" for the dongle can be anything ZMK supports.
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: dokodemo_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: dokodemo_dongle_with_studio
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: dokodemo_left rgbled_adapter
     snippet: dokodemo-left-as-peripheral
     artifact-name: dokodemo_left_as_peripheral

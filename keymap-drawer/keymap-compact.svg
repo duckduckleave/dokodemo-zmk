@@ -25,6 +25,7 @@
   .key rect { fill: #252c38; stroke: #526071; stroke-width: 1.6; }
   text { dominant-baseline: middle; }
   .base { fill: #f8fafc; font-weight: 700; }
+  .core-shift { fill: #c084fc; font-family: system-ui,sans-serif; font-weight: 800; }
   .base-icon, .layer-icon, defs symbol[id^="arrow"] path, defs symbol[id^="page"] path { fill: none; stroke: currentColor; stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }
   .base-icon { color: #f8fafc; stroke-width: 2.5; }
   .sticky-shift-icon { fill: #f0abfc; color: #f0abfc; }
@@ -148,6 +149,7 @@
 <g transform="translate(1348 190) rotate(0)" class="key key-9">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
 <text x="0" y="7" class="base" text-anchor="middle" font-size="30">;</text>
+<text x="0" y="-29" class="core-shift" text-anchor="middle" font-size="18.5">:</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="22">`</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="22.5">/</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="12.5">ScrLk</text>
@@ -288,6 +290,7 @@
 <g transform="translate(1132 322) rotate(0)" class="key key-27">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
 <text x="0" y="7" class="base" text-anchor="middle" font-size="30">,</text>
+<text x="0" y="-29" class="core-shift" text-anchor="middle" font-size="18.5">&lt;</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="22">;</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="22.5">2</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="18">♪−</text>
@@ -295,6 +298,7 @@
 <g transform="translate(1240 344) rotate(0)" class="key key-28">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
 <text x="0" y="7" class="base" text-anchor="middle" font-size="30">.</text>
+<text x="0" y="-29" class="core-shift" text-anchor="middle" font-size="18.5">&gt;</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="22">:</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="22.5">3</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="18">☀−</text>
@@ -302,6 +306,7 @@
 <g transform="translate(1348 406) rotate(0)" class="key key-29">
 <rect x="-54" y="-54" width="108" height="108" rx="10"/>
 <text x="0" y="7" class="base" text-anchor="middle" font-size="30">/</text>
+<text x="0" y="-29" class="core-shift" text-anchor="middle" font-size="18.5">?</text>
 <text x="-45" y="-37" class="symbols" text-anchor="start" font-size="22">?</text>
 <text x="45" y="-37" class="navnum" text-anchor="end" font-size="22.5">.</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="12.5">Ins</text>
@@ -326,7 +331,7 @@
 <use href="#space" x="-22" y="-29" width="44" height="28" class="base base-icon"/>
 <rect x="-21" y="6" width="42" height="29" rx="14.5" class="hold-badge nav-hold"/>
 <use href="#navpad" x="-10" y="11" width="20" height="20" class="navnum"/>
-<text x="45" y="-37" class="navnum" text-anchor="end" font-size="22.5">⇧⎵</text>
+<text x="45" y="-37" class="navnum" text-anchor="end" font-size="16.3934">⌃⌥◆⇧⎵</text>
 <text x="-45" y="43" class="fn" text-anchor="start" font-size="14.5">Reset</text>
 </g>
 <g transform="translate(910 505) rotate(-10)" class="key key-33">
@@ -363,6 +368,7 @@
 <g class="mock-key" transform="translate(722 160)">
 <rect x="-70" y="-66" width="140" height="132" rx="13" class="mock-cap"/>
 <text x="0" y="-12" class="mock-base" text-anchor="middle" font-size="22">BASE</text>
+<text x="0" y="-40" class="core-shift" text-anchor="middle" font-size="14">⇧ MAJ.</text>
 <rect x="-34" y="4" width="68" height="25" rx="12.5" class="hold-badge"/>
 <text x="0" y="17" class="base-hold" text-anchor="middle" font-size="10.5">MAINTIEN</text>
 <g class="mock-pill symbols"><rect x="-130" y="-78" width="96" height="25" rx="12.5"/><text x="-82" y="-65" class="" text-anchor="middle" font-size="10.5">#  SYMBOLES</text></g>
@@ -370,7 +376,7 @@
 <g class="mock-pill fn"><rect x="-101" y="53" width="66" height="25" rx="12.5"/><text x="-68" y="66" class="" text-anchor="middle" font-size="13">fn</text></g>
 <g class="mock-pill gaming"><rect x="35" y="53" width="96" height="25" rx="12.5"/><use href="#gamepad" x="45" y="56" width="20" height="20"/><text x="70" y="66" class="" text-anchor="start" font-size="10.5">JEU</text></g>
 <g class="legend-anatomy">
-<text x="0" y="92" class="legend-help" text-anchor="middle" font-size="10.5">centre = frappe  ·  pastille = maintien</text>
+<text x="0" y="92" class="legend-help" text-anchor="middle" font-size="10.5">haut = Maj.  ·  centre = frappe  ·  pastille = maintien</text>
 </g>
 <g class="legend-icons">
 <text x="-100" y="117" class="legend-glyph" text-anchor="middle" font-size="18">◆</text>

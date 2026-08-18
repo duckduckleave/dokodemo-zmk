@@ -11,7 +11,8 @@ layers:
   - L
   - U
   - Y
-  - ;
+  - t: ;
+    s: ':'
   - A
   - t: R
     h: ⌥
@@ -35,9 +36,12 @@ layers:
   - V
   - K
   - H
-  - ','
-  - .
-  - /
+  - t: ','
+    s: <
+  - t: .
+    s: '>'
+  - t: /
+    s: '?'
   - t: ⇧
     h: sticky
     type: special
@@ -134,7 +138,7 @@ layers:
   - t: ⌦
     h: fn
     type: held special fn-label
-  - t: ⇧⎵
+  - t: ⌃⌥◆⇧⎵
     h: fn
     type: special fn-label trigger-fn
   - t: ▽

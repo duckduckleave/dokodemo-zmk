@@ -96,7 +96,6 @@ parse_config:
     "&fnhrm LSHIFT PSCRN": {t: "Print", h: "⇧"}
     "&caps_word": "Caps Word"
   layer_legend_map:
-    NumLock: "⌖ Lock"
     NavNum: "⌖"
     Symbols: "#"
     Fn: "fn"
@@ -112,6 +111,8 @@ parse_config:
     right_gui: "◆"
     keycode_combiner: "{mods}{key}"
     mod_combiner: "{mod_1}{mod_2}"
+    special_combinations:
+      "left_ctrl+left_alt+left_gui+left_shift": "⌃⌥◆⇧"
   zmk_keycode_map:
     EXCLAMATION: "!"
     EXCL: "!"

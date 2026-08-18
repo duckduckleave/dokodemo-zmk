@@ -191,7 +191,7 @@ path.combo {
 </style>
 <g class="keymap-legend">
 <rect x="20" y="3" width="692" height="41" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
-<text x="30" y="17" style="font-size:11px;text-anchor:start">⌃ Ctrl · ⌥ Alt · ◆ GUI · ⇧ Shift · bottom legend = hold</text>
+<text x="30" y="17" style="font-size:11px;text-anchor:start">⌃ Ctrl · ⌥ Alt · ◆ GUI · <tspan style="fill:#9333ea;font-weight:bold">purple top = Shift output</tspan> · bottom legend = hold</text>
 <text x="30" y="35" style="font-size:11px;text-anchor:start"><tspan style="fill:#2563eb;font-weight:bold">⌖ NavNum</tspan> · <tspan style="fill:#d97706;font-weight:bold"># Symbols</tspan> · <tspan style="fill:#15803d;font-weight:bold">fn Fn</tspan> · <tspan style="fill:#7c3aed;font-weight:bold">Gaming</tspan> · both inner thumbs = Fn</text>
 </g>
 <g transform="translate(0, 49)">
@@ -237,6 +237,7 @@ path.combo {
 <g transform="translate(737, 90) rotate(7.0)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">;</text>
+<text x="0" y="-24" class="key shifted">:</text>
 </g>
 <g transform="translate(38, 142) rotate(-7.0)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -315,14 +316,17 @@ path.combo {
 <g transform="translate(599, 134)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">,</text>
+<text x="0" y="-24" class="key shifted">&lt;</text>
 </g>
 <g transform="translate(658, 151) rotate(3.0)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">.</text>
+<text x="0" y="-24" class="key shifted">&gt;</text>
 </g>
 <g transform="translate(724, 195) rotate(7.0)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">/</text>
+<text x="0" y="-24" class="key shifted">?</text>
 </g>
 <g transform="translate(272, 222) rotate(10.0)" class="key special keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key special"/>
@@ -641,7 +645,7 @@ path.combo {
 </g>
 <g transform="translate(441, 238) rotate(-20.0)" class="key special fn-label trigger-fn keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key special fn-label trigger-fn"/>
-<text x="0" y="0" class="key special fn-label trigger-fn tap">⇧⎵</text>
+<text x="0" y="0" class="key special fn-label trigger-fn tap">⌃⌥◆⇧⎵</text>
 <text x="0" y="24" class="key special fn-label trigger-fn hold">fn</text>
 </g>
 <g transform="translate(496, 222) rotate(-10.0)" class="key trans keypos-33">

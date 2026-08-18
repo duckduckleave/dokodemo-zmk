@@ -7,11 +7,10 @@
 #include "includes/behaviors.dtsi"
 
 #define BASE_L 0
-#define NUM_LOCK_L 1
-#define SYM_L 2
-#define NAV_NUM_L 3
-#define FN_L 4
-#define GAMING_L 5
+#define SYM_L 1
+#define NAV_NUM_L 2
+#define FN_L 3
+#define GAMING_L 4
 
 / {
     keymap {
@@ -32,16 +31,6 @@
             >;
         };
 
-        num_lock_layer {
-            display-name = "NumLock";
-            bindings = <
-            &kp ESC    &kp HOME   &kp UP     &kp END    &kp PG_UP      &to BASE_L  &kp N7     &kp N8     &kp N9     &kp FSLH
-            &kp EQUAL  &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN      &kp MINUS   &kp N4     &kp N5     &kp N6     &kp N0
-            &kp DLLR   &kp COLON  &kp STAR   &kp PLUS   &kp PRCNT      &kp COMMA   &kp N1     &kp N2     &kp N3     &kp DOT
-                                             &sk LSHFT  &lt NAV_NUM_L BSPC    &lt NAV_NUM_L SPACE  &lt SYM_L TAB
-            >;
-        };
-
         symbols_layer {
             display-name = "Symbols";
             bindings = <
@@ -55,10 +44,10 @@
         nav_num_layer {
             display-name = "NavNum";
             bindings = <
-            &kp LC(W)  &kp HOME   &kp UP     &kp END    &kp PG_UP      &to NUM_LOCK_L  &kp N7     &kp N8     &kp N9     &kp FSLH
+            &kp LC(W)  &kp HOME   &kp UP     &kp END    &kp PG_UP      &tog NAV_NUM_L  &kp N7     &kp N8     &kp N9     &kp FSLH
             &kp LC(A)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN      &kp MINUS        &kp N4     &kp N5     &kp N6     &kp N0
             &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)      &kp COMMA        &kp N1     &kp N2     &kp N3     &kp DOT
-                                             &trans     &sc FN_L DEL       &sc FN_L LS(SPACE)  &trans
+                                             &trans     &sc FN_L DEL       &sc FN_L LA(LG(LS(LC(SPACE))))  &trans
             >;
         };
 

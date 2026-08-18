@@ -28,7 +28,7 @@
             hold-trigger-on-release;
         };
 
-        // NavNum thumb keys: tap Delete/Shift+Space, hold for Fn.
+        // NavNum thumb keys: tap Delete/Hyper+Space, hold for Fn.
         sc: space_cadet {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;

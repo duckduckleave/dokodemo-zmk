@@ -11,7 +11,7 @@ import yaml
 LEGEND_HEIGHT = 49
 LEGEND = """<g class="keymap-legend">
 <rect x="20" y="3" width="692" height="41" rx="6" fill="#f6f8fa" stroke="#c9cccf"/>
-<text x="30" y="17" style="font-size:11px;text-anchor:start">⌃ Ctrl · ⌥ Alt · ◆ GUI · ⇧ Shift · bottom legend = hold</text>
+<text x="30" y="17" style="font-size:11px;text-anchor:start">⌃ Ctrl · ⌥ Alt · ◆ GUI · <tspan style="fill:#9333ea;font-weight:bold">purple top = Shift output</tspan> · bottom legend = hold</text>
 <text x="30" y="35" style="font-size:11px;text-anchor:start"><tspan style="fill:#2563eb;font-weight:bold">⌖ NavNum</tspan> · <tspan style="fill:#d97706;font-weight:bold"># Symbols</tspan> · <tspan style="fill:#15803d;font-weight:bold">fn Fn</tspan> · <tspan style="fill:#7c3aed;font-weight:bold">Gaming</tspan> · both inner thumbs = Fn</text>
 </g>"""
 
@@ -24,7 +24,14 @@ TRIGGER_TYPES = {
 SPECIAL_TAPS = {
     "⇧", "⌫", "⎵", "⇥", "⏎", "⎋", "⌦",
     "↖", "↘", "⇞", "⇟", "↑", "↓", "←", "→",
-    "⇧⎵", "⏮", "⏭", "⏯",
+    "⌃⌥◆⇧⎵", "⏮", "⏭", "⏯",
+}
+
+SHIFTED_SYMBOLS = {
+    ";": ":",
+    ",": "<",
+    ".": ">",
+    "/": "?",
 }
 
 
@@ -39,6 +46,18 @@ def add_type(key: dict, key_type: str) -> None:
 def format_yaml(path: Path) -> None:
     keymap = yaml.safe_load(path.read_text(encoding="utf-8"))
     layers = keymap.get("layers", {})
+
+    # Show the US-QWERTY host's shifted punctuation on the Colemak-DH base.
+    base = layers.get("Base", [])
+    for position, key in enumerate(base):
+        tap = key.get("t") if isinstance(key, dict) else key
+        shifted = SHIFTED_SYMBOLS.get(tap)
+        if not shifted:
+            continue
+        if not isinstance(key, dict):
+            key = {"t": key}
+            base[position] = key
+        key["s"] = shifted
 
     # Present the persistent numeric mode as a lock of NavNum instead of the
     # parser's generic layer number + "toggle" label.
@@ -63,10 +82,6 @@ def format_yaml(path: Path) -> None:
             structural_types = set(key.get("type", "").split())
             if trigger_type and not structural_types.intersection({"held", "trans"}):
                 add_type(key, trigger_type)
-
-    # NumLock is a persistent helper for NavNum, not a separate conceptual
-    # layer users need in the primary diagram.
-    layers.pop("NumLock", None)
 
     ordered_layers = {}
     for name in ("Base", "Symbols", "NavNum", "Fn", "Gaming"):

@@ -186,6 +186,18 @@ def draw_key(position: dict, center: tuple[float, float, float], index: int, lay
             hold_y = 22.5 if base_hold == "⌃" else 21
             out.append(svg_text(0, hold_y, hold_label, hold_class, size=fitted_size(hold_label, 19, badge_width - 10, 12)))
 
+    if isinstance(base_value, dict) and base_value.get("s"):
+        shifted = str(base_value["s"])
+        out.append(
+            svg_text(
+                0,
+                -29,
+                shifted,
+                "core-shift",
+                size=fitted_size(shifted, 18.5, 34, 11),
+            )
+        )
+
     slots = {
         "tl": (-half + 9, -half + 17, "start"),
         "tr": (half - 9, -half + 17, "end"),
@@ -254,6 +266,7 @@ def mock_key(center_x: float, center_y: float) -> str:
     return f'''<g class="mock-key" transform="translate({center_x:g} {center_y:g})">
 <rect x="-70" y="-66" width="140" height="132" rx="13" class="mock-cap"/>
 {svg_text(0, -12, "BASE", "mock-base", size=22)}
+{svg_text(0, -40, "⇧ MAJ.", "core-shift", size=14)}
 <rect x="-34" y="4" width="68" height="25" rx="12.5" class="hold-badge"/>
 {svg_text(0, 17, "MAINTIEN", "base-hold", size=10.5)}
 <g class="mock-pill symbols"><rect x="-130" y="-78" width="96" height="25" rx="12.5"/>{svg_text(-82, -65, "#  SYMBOLES", "", size=10.5)}</g>
@@ -261,7 +274,7 @@ def mock_key(center_x: float, center_y: float) -> str:
 <g class="mock-pill fn"><rect x="-101" y="53" width="66" height="25" rx="12.5"/>{svg_text(-68, 66, "fn", "", size=13)}</g>
 <g class="mock-pill gaming"><rect x="35" y="53" width="96" height="25" rx="12.5"/><use href="#gamepad" x="45" y="56" width="20" height="20"/>{svg_text(70, 66, "JEU", "", anchor="start", size=10.5)}</g>
 <g class="legend-anatomy">
-{svg_text(0, 92, "centre = frappe  ·  pastille = maintien", "legend-help", size=10.5)}
+{svg_text(0, 92, "haut = Maj.  ·  centre = frappe  ·  pastille = maintien", "legend-help", size=10.5)}
 </g>
 <g class="legend-icons">
 {svg_text(-100, 117, "◆", "legend-glyph", size=18)}
@@ -424,6 +437,7 @@ def main() -> None:
   .key rect {{ fill: #252c38; stroke: #526071; stroke-width: 1.6; }}
   text {{ dominant-baseline: middle; }}
   .base {{ fill: #f8fafc; font-weight: 700; }}
+  .core-shift {{ fill: #c084fc; font-family: system-ui,sans-serif; font-weight: 800; }}
   .base-icon, .layer-icon, defs symbol[id^="arrow"] path, defs symbol[id^="page"] path {{ fill: none; stroke: currentColor; stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }}
   .base-icon {{ color: #f8fafc; stroke-width: 2.5; }}
   .sticky-shift-icon {{ fill: #f0abfc; color: #f0abfc; }}
